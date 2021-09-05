@@ -11,11 +11,13 @@ class AppRouter{
   Route generateRoute(RouteSettings settings){
     switch(settings.name){
       case splashScreen:
-        return MaterialPageRoute(builder: (_)=>RegisterView());
+        return MaterialPageRoute(builder: (_)=>SplashView());
       case loginScreen:
         return MaterialPageRoute(builder: (_)=>LoginView());
       case forgotPasswordScreen:
         return MaterialPageRoute(builder: (_)=>ForgotPasswordView());
+      case registerScreen:
+        return MaterialPageRoute(builder: (_)=>RegisterView());
     }
   }
 }

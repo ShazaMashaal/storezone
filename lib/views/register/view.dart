@@ -2,7 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:storezone/consts/dim.dart';
 import 'package:storezone/consts/strings.dart';
-import 'package:storezone/views/register/widgets/register_form.dart';
+
+import 'components/register_form.dart';
 
 class RegisterView extends StatelessWidget {
   final _formKey = GlobalKey<FormState>();

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:storezone/consts/strings.dart';
-import 'package:storezone/views/register/widgets/register_button.dart';
-import 'package:storezone/views/register/widgets/text_field.dart';
-import 'package:storezone/views/register/widgets/text_span.dart';
+import 'package:storezone/views/register/components/register_button.dart';
+import 'package:storezone/views/register/components/text_field.dart';
+import 'package:storezone/views/register/components/text_span.dart';
 
 Form loginForm(_formKey, context) {
   return Form(
@@ -14,8 +14,8 @@ Form loginForm(_formKey, context) {
             textField("Email"),
             textField("Password", hintText: "At least 6 characters"),
             RichText(
-              text: textSpan(context, "   Forgot Password ?", Colors.blue,
-                  nextScreen: forgotPasswordScreen),
+              text: textSpan("   Forgot Password ?", Colors.blue,
+                  function:()=> Navigator.pushNamed(context,forgotPasswordScreen)),
             ),
             registerButton(context, Color(0xFFFD9A25), "Login",
                 textColor: Color(0xFFFFF6E9)),
@@ -29,6 +29,6 @@ Form loginForm(_formKey, context) {
                   fontSize: 15),
             ),
             registerButton(context, Color(0xFFFFF6E9), "Register",
-                nextScreen: registerScreen, textColor: Color(0xFFFD9A25)),
+                function:()=> Navigator.pushNamed(context, registerScreen), textColor: Color(0xFFFD9A25)),
           ]));
 }

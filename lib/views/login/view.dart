@@ -10,6 +10,7 @@ class LoginView  extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
   body:ListView(
+    // TODO:Use from LRTB
     padding: EdgeInsets.only(right: 30, left: 30, top: 50, bottom: 50),
     children: [
       Image.asset(

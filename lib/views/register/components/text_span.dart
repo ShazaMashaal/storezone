@@ -1,11 +1,11 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
-TextSpan textSpan(context,text,color,{nextScreen}) {
+TextSpan textSpan(text,color,{nextScreen,Function function}) {
   return TextSpan(
     text: text,
     style:  TextStyle(color: color),
       recognizer: TapGestureRecognizer()
-        ..onTap = () => Navigator.pushNamed(context, nextScreen));
+        ..onTap = function);
 
 }
