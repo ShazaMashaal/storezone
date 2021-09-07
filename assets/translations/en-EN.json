@@ -1,0 +1,12 @@
+{
+  "login": {
+    "email": "Email",
+    "password": "Password",
+    "passwordHint": "At least 6 characters",
+    "forgotPassword": "   Forgot Password ?",
+    "login": "Login",
+    "haveAccount": "   Don't have an account ?",
+    "register": "Register"
+  }
+
+}
