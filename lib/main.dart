@@ -2,21 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:storezone/app_router.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:storezone/translations/codegen_loader.g.dart';
 
-void main() async {
+Future <void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
-  runApp(EasyLocalization(
-    path: "assets/translations",
-    saveLocale: true,
-    supportedLocales: [
-      Locale('en','EN'),
-      Locale('ar','AR')
-    ],
+  runApp( EasyLocalization(
+    path: 'assets/translations',
+    supportedLocales: [Locale('en'), Locale('ar')],
+    fallbackLocale: Locale('en'),
+    assetLoader: CodegenLoader(),
+
+
     child: MyApp(
-      appRouter: AppRouter(),
-    ),
-  ));
+        appRouter: AppRouter(),
+      ),
+  ),
+
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -37,3 +40,4 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+

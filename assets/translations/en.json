@@ -1,0 +1,32 @@
+{
+  "login": {
+    "email": "Email",
+    "password": "Password",
+    "passwordHint": "At least 6 characters",
+    "forgotPassword": "   Forgot Password ?",
+    "login": "Login",
+    "haveAccount": "   Don't have an account ?",
+    "register": "Register"
+  },
+  "register": {
+    "yourName": "Your Name",
+    "alreadyHaveAccount": "Already have an account ?",
+    "reenterPassword": "Re-enter password",
+    "continue": "By continuing, you agree to Amazon's",
+    "conditions": "Conditions of use",
+    "and": "and",
+    "privacy": " Privacy Notice"
+  },
+  "forgotPassword": {
+    "title": "Forgot Password",
+    "resetPassword": "Reset your password",
+    "confirmEmail": "Confirm your email and we'll send the instructions."
+  },
+  "pinCode": {
+    "title": "Email Verification",
+    "enterCode": "Enter the code sent to ",
+    "didntRecieveCode": "\"Didn't receive the code? \"",
+    "resend": "RESEND",
+    "verify": "VERIFY"
+  }
+}

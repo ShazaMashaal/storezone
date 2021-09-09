@@ -1,0 +1,32 @@
+{
+  "login": {
+    "email": "البريد الالكتروني",
+    "password": "كلمة المرور",
+    "passwordHint": "ستة أحرف على الأقل",
+    "forgotPassword": "هل نسيت كلمة المرور",
+    "login": "تسجيل الدخول",
+    "haveAccount": "ليس لديك حساب ؟",
+    "register": "انشاء حساب"
+  },
+  "register": {
+    "yourName": "اسمك",
+    "alreadyHaveAccount": "لديك حساب بالفعل ؟",
+    "reenterPassword": "أعد كتابة كلمة السر",
+    "continue": "بالمتابعة ، فإنك توافق على",
+    "conditions": "شروط استخدام أمازون",
+    "and": "و",
+    "privacy": "إشعار الخصوصية"
+  },
+  "forgotPassword": {
+    "title": "نسيت كلمة المرور",
+    "resetPassword": "أعد تعيين كلمة المرور",
+    "confirmEmail": "قم بتأكيد بريدك الإلكتروني وسنرسل لك التعليمات."
+  },
+  "pinCode": {
+    "title": "التحقق من البريد الإلكتروني",
+    "enterCode": "أدخل الرمز المرسل إلى",
+    "didntRecieveCode": " ألم تتلق الرمز؟",
+    "resend": "إعادة الإرسال",
+    "verify": "تحقق"
+  }
+}

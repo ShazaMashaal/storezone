@@ -1,28 +1,36 @@
 import 'package:flutter/material.dart';
-import 'package:storezone/views/forgot_password/widgets/custom_appbar.dart';
-import 'package:storezone/views/forgot_password/widgets/pin_code_screen.dart';
-import 'package:storezone/views/forgot_password/widgets/show_dialog.dart';
+import 'package:storezone/consts/strings.dart';
+import 'package:storezone/translations/locale_keys.g.dart';
+import 'package:storezone/views/login/components/login_text.dart';
 import 'package:storezone/views/register/components/register_button.dart';
 import 'package:storezone/views/register/components/text_field.dart';
+import 'package:easy_localization/easy_localization.dart';
+
+import 'components/custom_appbar.dart';
 
 class ForgotPasswordView extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: customAppBar(context,"Forgot Password"),
+      appBar: customAppBar(context, LocaleKeys.forgotPassword_title.tr()),
       body: Center(
         child: ListView(
-          padding: EdgeInsets.only(right: 30, left: 30, top: 50, bottom: 50),
-
+          padding: EdgeInsets.fromLTRB(30,50,30,50),
           children: [
-            textField("Email"),
-            registerButton(context, Color(0xFFFD9A25), "Reset your password",textColor: Colors.white,function: ()=>showMaterialDialog(context) )
+            text(
+                LocaleKeys.forgotPassword_confirmEmail.tr(),
+                Color(
+                  0xFF898989,
+                )),
+            textField(LocaleKeys.login_email.tr()),
+            registerButton(context, Color(0xFFFD9A25),
+                LocaleKeys.forgotPassword_resetPassword.tr(),16,
+                textColor: Colors.white,
+                function: () => Navigator.pushNamed(context,pinCodeScreen))
           ],
         ),
       ),
     );
   }
-
 }

@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:storezone/consts/strings.dart';
+import 'package:storezone/translations/locale_keys.g.dart';
 import 'package:storezone/views/register/components/conditions_agreement_text.dart';
 import 'package:storezone/views/register/components/register_button.dart';
 import 'package:storezone/views/register/components/text_field.dart';
-import 'package:storezone/views/register/components/text_span.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 
 Form registerForm(_formKey, context) {
@@ -12,11 +13,11 @@ Form registerForm(_formKey, context) {
     child: Column(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        textField("Your name"),
-        textField("Email"),
-        textField("Password", hintText: "At least 6 characters"),
-        textField("Re-enter password", hintText: "At least 6 characters"),
-        registerButton(context, Color(0xFFFD9A25), "Register",
+        textField(LocaleKeys.register_yourName.tr()),
+        textField(LocaleKeys.login_email.tr()),
+        textField(LocaleKeys.login_password.tr(), hintText: LocaleKeys.login_passwordHint.tr()),
+        textField(LocaleKeys.register_reenterPassword.tr(), hintText: LocaleKeys.login_passwordHint.tr()),
+        registerButton(context, Color(0xFFFD9A25), LocaleKeys.login_register.tr(),16,
             textColor: Colors.white,
             function:()=> Navigator.pushNamed(context,forgotPasswordScreen)
         ),
@@ -24,7 +25,7 @@ Form registerForm(_formKey, context) {
         Padding(
           padding: const EdgeInsets.only(top:20.0),
           child: Text(
-            "Already have an account",
+            LocaleKeys.register_alreadyHaveAccount.tr(),
             style: TextStyle(
                 color: Color(
                   0xFFB2B2B2,
@@ -33,7 +34,7 @@ Form registerForm(_formKey, context) {
                 fontSize: 15),
           ),
         ),
-        registerButton(context, Color(0xFFFFF6E9), "Sign in",function:()=> Navigator.pop(context),
+        registerButton(context, Color(0xFFFFF6E9), LocaleKeys.login_login.tr(),16,function:()=> Navigator.pop(context),
             textColor: Color(0xFFFD9A25)),
       ],
     ),

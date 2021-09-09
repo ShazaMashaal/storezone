@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:storezone/consts/dim.dart';
 import 'package:storezone/consts/strings.dart';
 
-Padding registerButton(context,color,text,{nextScreen, textColor,Function function}) {
+Padding registerButton(context,color,text,height,{nextScreen, textColor,Function function}) {
    return Padding(
      padding: const EdgeInsets.only(top:20.0),
      child: InkWell(
@@ -11,7 +11,7 @@ Padding registerButton(context,color,text,{nextScreen, textColor,Function functi
       ,
       child: Ink(
         //width: 100.0,
-        height: heightMediaQuery(context, 16),
+        height: heightMediaQuery(context, height),
         decoration: BoxDecoration(
           color: color,
           borderRadius: formFieldsRadius,
