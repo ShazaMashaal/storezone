@@ -22,7 +22,7 @@ class AppRouter{
       case pinCodeScreen:
         return MaterialPageRoute(builder: (_)=>PinCodeView());
       case homeScreen:
-        return MaterialPageRoute(builder: (_)=>HomeView());
+        return MaterialPageRoute(builder: (_)=>Home());
 
     }
   }
