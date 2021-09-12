@@ -26,6 +26,7 @@ class LangDropDownButton extends StatelessWidget {
 
           if    (newValue=="English"){
             await context.setLocale(Locale('en'));
+      print(Localizations.localeOf(context));
           }else if    (newValue=="Arabic"){
             await context.setLocale(Locale('ar'));
           }
