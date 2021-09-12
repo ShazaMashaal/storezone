@@ -1,12 +1,11 @@
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:storezone/consts/dim.dart';
 import 'package:storezone/views/home/category_view.dart';
 import 'package:storezone/views/home/components/app_bar.dart';
-import 'package:getwidget/getwidget.dart';
+import 'package:storezone/views/home/settings_view.dart';
 import 'package:storezone/views/home/home_view.dart';
-import 'package:storezone/views/register/components/register_button.dart';
+
+import 'favorite_view.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -19,7 +18,7 @@ class _HomeState extends State<Home> {
     List<Widget> _widgetOptions = <Widget>[
     HomeView(),
       CategoryView(),
-      HomeView(), HomeView()
+      FavoritesView(), SettingsView()
 
   ];
 
