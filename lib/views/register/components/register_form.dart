@@ -19,7 +19,7 @@ Form registerForm(_formKey, context) {
         textField(LocaleKeys.register_reenterPassword.tr(), hintText: LocaleKeys.login_passwordHint.tr()),
         registerButton(context, Color(0xFFFD9A25), LocaleKeys.login_register.tr(),16,
             textColor: Colors.white,
-            function:()=> Navigator.pushNamed(context,forgotPasswordScreen)
+            function:()=> Navigator.pushNamed(context,homeScreen)
         ),
         conditionAgreementText(),
         Padding(
