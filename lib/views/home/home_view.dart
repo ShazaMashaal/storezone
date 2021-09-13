@@ -17,20 +17,57 @@ class HomeView extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
-          Container(
-            height: 250,
-            width: MediaQuery. of(context). size. width,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                  fit: BoxFit. fill,
-                  image: NetworkImage("https://img.youm7.com/xlarge/202109010246394639.jpg"),
-          ))),
-          SizedBox(height: 50,),
-          Container(
-            padding:EdgeInsets.symmetric(horizontal: 40),
-            child: Text("Categories",textAlign: TextAlign.start,),
-          )
+          Stack(
+            children: [
+              Column(
+                children: [
+                  Container(
+                    height: 250,
+                    width: MediaQuery. of(context). size. width,
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                          fit: BoxFit. fill,
+                          image: NetworkImage("https://img.youm7.com/xlarge/202109010246394639.jpg"),
+                  ))),
+
+              Container(
+                padding:EdgeInsets.symmetric(horizontal: 40),
+                child: Text(""),
+                height: 200,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                    color: Colors.grey[300],
+
+                    boxShadow: [BoxShadow(
+                    color: Colors.grey[300].withOpacity(0.8),
+                      spreadRadius: 3,
+                      blurRadius: 7,
+                      offset: Offset(0, -20), // changes position of shado
+
+                  )]
+                ),
+
+              ),
+                ]
+              ),
+              SizedBox(
+                // child:ListView.builder(
+                //     physics: ClampingScrollPhysics(),
+                //     shrinkWrap: true,
+                //     scrollDirection: Axis.horizontal,
+                //   itemBuilder: (context, index) {
+                //     return Container(
+                //       height: 30,
+                //       width: 30,
+                //       color: Colors.white,
+                //     );
+                //   }
+                // )
+              ),
             ],
+          ),
+            ],
+
       ),
     );
   }
