@@ -16,7 +16,7 @@ Form loginForm(_formKey, context) {
             textField(LocaleKeys.login_email.tr()),
             textField(LocaleKeys.login_password.tr(), hintText: LocaleKeys.login_passwordHint.tr()),
             Align(
-              alignment: Alignment.centerLeft,
+              alignment:Localizations.localeOf(context)==Locale('en')?Alignment.centerLeft:Alignment.centerRight,
 
               child: Padding(
                 padding: const EdgeInsets.only(top:20.0),
