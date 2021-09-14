@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:storezone/views/home/components/favorite_circle_icon.dart';
 
 class FavoritesView extends StatelessWidget {
   @override
@@ -66,19 +67,7 @@ class FavoritesView extends StatelessWidget {
                               fontSize: 18,color: Colors.grey
                             ),
                           ),
-                          Stack(
-                            alignment: Alignment.center,
-                            children: [
-                              CircleAvatar(
-                                radius: 15,
-                                backgroundColor: Color(0xFFFD9A25),
-                              ),
-                              Icon(
-                                Icons.favorite_border,
-                                color: Colors.white,
-                              )
-                            ],
-                          )
+                          circleFavoriteIcon(color: Color(0xFFFD9A25),)
                         ],
                       )
                     ],
@@ -104,3 +93,4 @@ class FavoritesView extends StatelessWidget {
     );
   }
 }
+//TODO: Put image placeholder until the image loads

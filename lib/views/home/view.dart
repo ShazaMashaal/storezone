@@ -13,13 +13,13 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  int currentIndex=0;
+  int currentIndex = 0;
 
-    List<Widget> _widgetOptions = <Widget>[
+  List<Widget> _widgetOptions = <Widget>[
     HomeView(),
-      CategoryView(),
-      FavoritesView(), SettingsView()
-
+    CategoryView(),
+    FavoritesView(),
+    SettingsView()
   ];
 
   @override
@@ -29,21 +29,21 @@ class _HomeState extends State<Home> {
         selectedItemColor: Color(0xFFFD9A25),
         type: BottomNavigationBarType.fixed,
         currentIndex: currentIndex,
-        onTap: (value){
-          currentIndex=value;
-          setState(() {
-
-          });
+        onTap: (value) {
+          currentIndex = value;
+          setState(() {});
         },
         items: [
-          BottomNavigationBarItem(icon: Icon(Icons.home),label: "Home"),
-          BottomNavigationBarItem(icon: Icon(Icons.category),label: "Category"),
-          BottomNavigationBarItem(icon: Icon(Icons.favorite),label: "Favorite"),
-          BottomNavigationBarItem(icon: Icon(Icons.settings),label: "Settings")
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.category), label: "Category"),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.favorite), label: "Favorite"),
+          BottomNavigationBarItem(icon: Icon(Icons.settings), label: "Settings")
         ],
       ),
       appBar: appBar(context),
-      body:_widgetOptions.elementAt(currentIndex),
+      body: _widgetOptions.elementAt(currentIndex),
     );
   }
 }
