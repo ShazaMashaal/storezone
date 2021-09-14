@@ -14,8 +14,12 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
+
+
   @override
   Widget build(BuildContext context) {
+    List x = [1,2,3,3];
+
     return SingleChildScrollView(
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -34,24 +38,26 @@ class _HomeViewState extends State<HomeView> {
                 // child: SingleChildScrollView(
                 //   physics: ScrollPhysics(),
                 //   scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: [
-                    SignCard(),
-                    Flexible(
-                      child: ListView.builder(
-                        // shrinkWrap: true,
-                        // physics: ClampingScrollPhysics(),
-
-                        scrollDirection: Axis.horizontal,
-                        itemBuilder: (BuildContext context, int index) {
-                          return DiscountCard();
-                        },
-                      ),
-                    ),
-                  ],
+                child: ListView.builder(
+                  // shrinkWrap: true,
+                  // physics: ClampingScrollPhysics(),
+                  itemCount: x.length + 1,
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (BuildContext context, int index) {
+                    if(index == 0)
+                      return SignCard();
+                    // return Text(x[index - 1].toString());
+                    return DiscountCard();
+                  },
                 ),
                 //TODO: make the first container scrollable
-
+                // Expanded(
+                //   child:,
+                //   flex: ,
+                // ),
+                // Flexible(
+                //   fit: FlexFit.loose,
+                // ),
                 // ),
                 // child: ListView(
                 //   scrollDirection: Axis.horizontal,

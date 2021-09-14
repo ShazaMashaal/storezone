@@ -31,6 +31,7 @@ class CategoryView extends StatelessWidget {
                     //   fit: BoxFit.fill,
                     // ),
                     child: FadeInImage(image: NetworkImage("https://previews.123rf.com/images/yupiramos/yupiramos1501/yupiramos150102152/35448844-gadgets-tech-design-vector-illustration-eps10-graphic.jpg"), placeholder: AssetImage("assets/images/placeholder.gif"),
+                  //TODO: shimmer
                     )
                   ),
                 ),

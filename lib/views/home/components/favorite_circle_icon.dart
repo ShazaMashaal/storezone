@@ -1,8 +1,19 @@
 import 'package:flutter/material.dart';
+// class  extends StatefulWidget {
+//
+//   @override
+//   _State createState() => _State();
+// }
+//
+// class _State extends State<> {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Container();
+//   }
+// }
 
 
-  circleFavoriteIcon( {Color color}) {
-
+circleFavoriteIcon( {Color color}) {
 //TODO: change color (setState????)
     return GestureDetector(
       onTap:(){ if(color==Color(0xFFFD9A25))
