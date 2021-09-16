@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:storezone/views/details/view.dart';
 import 'package:storezone/views/forgot_password/view.dart';
 import 'package:storezone/views/home/view.dart';
 import 'package:storezone/views/login/view.dart';
@@ -23,6 +24,9 @@ class AppRouter{
         return MaterialPageRoute(builder: (_)=>PinCodeView());
       case homeScreen:
         return MaterialPageRoute(builder: (_)=>Home());
+      case detailsScreen:
+        return MaterialPageRoute(builder: (_)=>DetailsView());
+
 
     }
   }

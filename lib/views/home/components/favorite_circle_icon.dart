@@ -1,42 +1,33 @@
 import 'package:flutter/material.dart';
-// class  extends StatefulWidget {
-//
-//   @override
-//   _State createState() => _State();
-// }
-//
-// class _State extends State<> {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Container();
-//   }
-// }
 
+class CircleFavoriteIcon extends StatefulWidget {
+  bool isFavorite = false;
 
-circleFavoriteIcon( {Color color}) {
-//TODO: change color (setState????)
-    return GestureDetector(
-      onTap:(){ if(color==Color(0xFFFD9A25))
-        color=Colors.grey;
-      else
-        color=Color(0xFFFD9A25);
-      print(color);
-      },
-      child: Stack(
-        alignment: Alignment.center,
-        children: [
-          CircleAvatar(
-            radius: 15,
-            backgroundColor: color,
-            // backgroundColor: Color(0xFFFD9A25),
+//TODO: why response is slower when putting isFavorite
 
-          ),
-          Icon(
-            Icons.favorite_border,
-            color: Colors.white,
-          )
-        ],
+  @override
+  _CircleFavoriteIconState createState() => _CircleFavoriteIconState();
+}
+// bool isFavorite = false;
+
+//TODO: Here
+
+class _CircleFavoriteIconState extends State<CircleFavoriteIcon> {
+  @override
+  Widget build(BuildContext context) {
+    return CircleAvatar(
+      backgroundColor: widget.isFavorite ? Color(0xFFFD9A25) : Colors.grey,
+      radius: 17,
+      child: IconButton(
+        padding: EdgeInsets.zero,
+        icon: Icon(Icons.favorite_border),
+        color: Colors.white,
+        onPressed: () {
+          setState(() {
+            widget.isFavorite = !widget.isFavorite;
+          });
+        },
       ),
     );
   }
-
+}
