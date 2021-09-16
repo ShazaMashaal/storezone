@@ -28,5 +28,20 @@
     "didntRecieveCode": " ألم تتلق الرمز؟",
     "resend": "إعادة الإرسال",
     "verify": "تحقق"
+  },
+  "settings": {
+    "title": "الاعدادات",
+    "account": "الحساب",
+    "notifications": "الاشعارات",
+    "language": "البلد واللغة",
+    "aboutUs": "معلومات عنا",
+    "contactUs": "اتصل بنا"
+  },
+  "home": {
+    "home": "الرئيسية",
+    "category": "الفئة",
+    "favorite": "المفضلة",
+    "settings": "الاعدادات",
+    "cart": "السلة"
   }
 }

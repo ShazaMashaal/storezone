@@ -31,47 +31,25 @@ class _HomeViewState extends State<HomeView> {
                 left: 0.0,
                 right: 0.0,
                 bottom: 5.0,
-                // child: SingleChildScrollView(
-                //   physics: ScrollPhysics(),
-                //   scrollDirection: Axis.horizontal,
                 child: Row(
                   children: [
-                    SignCard(),
                     Flexible(
                       child: ListView.builder(
-                        // shrinkWrap: true,
-                        // physics: ClampingScrollPhysics(),
-
                         scrollDirection: Axis.horizontal,
                         itemBuilder: (BuildContext context, int index) {
+                          if (index == 0) return SignCard();
                           return DiscountCard();
                         },
                       ),
                     ),
                   ],
                 ),
-                //TODO: make the first container scrollable
-
-                // ),
-                // child: ListView(
-                //   scrollDirection: Axis.horizontal,
-                //   children: <Widget>[
-                //     Container(width: 160.0, color: Colors.blue,),
-                //     Container(width: 160.0, color: Colors.green,),
-                //     Container(width: 160.0, color: Colors.cyan,),
-                //     Container(width: 160.0, color: Colors.black,),
-                //   ],
-                // )
               )
             ],
           ),
           HomeTitles(title: "Categories"),
           CategoriesList(),
-
           HomeTitles(title: "Products"),
-          //TODO: alternate GridView.count to GridView.builder and adjust spacing between items
-
-          //TODO : the difference between flexible and expanded
           Products()
         ],
       ),

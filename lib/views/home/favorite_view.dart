@@ -1,6 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:storezone/views/home/components/category_view_components/category_image.dart';
 import 'package:storezone/views/home/components/favorite_circle_icon.dart';
+import 'components/favorite_view_components/favorite_item_name.dart';
+import 'components/favorite_view_components/old_and_new_price.dart';
 
 class FavoritesView extends StatelessWidget {
   @override
@@ -20,55 +23,15 @@ class FavoritesView extends StatelessWidget {
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                Padding(
-                  padding: const EdgeInsets.all(2.0),
-                  child: ConstrainedBox(
-                    constraints: BoxConstraints(
-                      maxWidth: MediaQuery.of(context).size.width * 0.3,
-                      maxHeight: MediaQuery.of(context).size.width * 0.3,
-                    ),
-                    child: Image.network(
-                      "https://previews.123rf.com/images/yupiramos/yupiramos1501/yupiramos150102152/35448844-gadgets-tech-design-vector-illustration-eps10-graphic.jpg",
-                      height: 150,
-                      fit: BoxFit.fill,
-                    ),
-                  ),
-                ),
+                CategoryImage(),
                 Expanded(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: <Widget>[
-                      Container(
-                        width: MediaQuery.of(context).size.width * 0.5,
-                        child: Padding(
-                          padding: const EdgeInsets.fromLTRB(10, 30, 0, 10),
-                          child: Text(
-                            'Apple HeadPhone with Charging Case',
-                            style: TextStyle(
-                              fontSize: 18,
-                            ),
-                          ),
-                        ),
-                      ),
+                      FavoriteItemName(),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          Text(
-                            "11499",
-                            style: TextStyle(
-                              color: Color(0xFFFD9A25),
-                              fontSize: 18,
-                            ),
-                          ),
-                          Text(
-                            "11499",
-                            style: TextStyle(
-                              decoration: TextDecoration.lineThrough,
-                              fontSize: 18,color: Colors.grey
-                            ),
-                          ),
-                          circleFavoriteIcon(color: Color(0xFFFD9A25),)
-                        ],
+                        children: [OldAndNewPrice(), CircleFavoriteIcon()],
                       )
                     ],
                   ),
@@ -77,20 +40,7 @@ class FavoritesView extends StatelessWidget {
             ),
           ),
         );
-
-        // SizedBox(
-        //   height: 100,
-        //   child: ListTile(
-        //     leading:  Image.network("https://cdn.pixabay.com/photo/2021/08/25/20/42/field-6574455__480.jpg",height: 100, fit: BoxFit.cover),
-        //
-        //     title: Text("list[index].name",style: TextStyle(fontSize: 20.0),),
-        //     trailing: Icon(Icons.arrow_forward_ios),
-        //     contentPadding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 16.0),
-        //     dense:true,
-        //   ),
-        // );
       },
     );
   }
 }
-//TODO: Put image placeholder until the image loads

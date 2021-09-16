@@ -44,6 +44,21 @@ class CodegenLoader extends AssetLoader{
     "didntRecieveCode": " ألم تتلق الرمز؟",
     "resend": "إعادة الإرسال",
     "verify": "تحقق"
+  },
+  "settings": {
+    "title": "الاعدادات",
+    "account": "الحساب",
+    "notifications": "الاشعارات",
+    "language": "البلد واللغة",
+    "aboutUs": "معلومات عنا",
+    "contactUs": "اتصل بنا"
+  },
+  "home": {
+    "home": "الرئيسية",
+    "category": "الفئة",
+    "favorite": "المفضلة",
+    "settings": "الاعدادات",
+    "cart": "السلة"
   }
 };
 static const Map<String,dynamic> en = {
@@ -76,6 +91,21 @@ static const Map<String,dynamic> en = {
     "didntRecieveCode": "\"Didn't receive the code? \"",
     "resend": "RESEND",
     "verify": "VERIFY"
+  },
+  "settings": {
+    "title": "Settings",
+    "account": "Account",
+    "notifications": "notifications",
+    "language": "Country & language",
+    "aboutUs": "About Us",
+    "contactUs": "Contact Us"
+  },
+  "home": {
+    "home": "Home",
+    "category": "Category",
+    "favorite": "Favorite",
+    "settings": "Settings",
+    "cart": "Cart"
   }
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"ar": ar, "en": en};

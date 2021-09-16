@@ -27,5 +27,18 @@ abstract class  LocaleKeys {
   static const pinCode_resend = 'pinCode.resend';
   static const pinCode_verify = 'pinCode.verify';
   static const pinCode = 'pinCode';
+  static const settings_title = 'settings.title';
+  static const settings_account = 'settings.account';
+  static const settings_notifications = 'settings.notifications';
+  static const settings_language = 'settings.language';
+  static const settings_aboutUs = 'settings.aboutUs';
+  static const settings_contactUs = 'settings.contactUs';
+  static const settings = 'settings';
+  static const home_home = 'home.home';
+  static const home_category = 'home.category';
+  static const home_favorite = 'home.favorite';
+  static const home_settings = 'home.settings';
+  static const home_cart = 'home.cart';
+  static const home = 'home';
 
 }

@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:storezone/consts/strings.dart';
 
 import '../favorite_circle_icon.dart';
 
 class Products extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
-    return Flexible(
-      child: GridView.count(
-        childAspectRatio: .8,
-        shrinkWrap: true,
-        physics: NeverScrollableScrollPhysics(),
-        crossAxisCount: 2,
-        children: List.generate(10, (index) {
-          return Card(
-
+    return  GridView.count(
+      childAspectRatio: .8,
+      shrinkWrap: true,
+      physics: NeverScrollableScrollPhysics(),
+      crossAxisCount: 2,
+      children: List.generate(10, (index) {
+        return GestureDetector(
+          onTap: (){Navigator.pushNamed(context, detailsScreen);},
+          child: Card(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -31,25 +31,31 @@ class Products extends StatelessWidget {
                   flex: 4,
                   child: Container(
                     padding: EdgeInsets.symmetric(horizontal: 20),
-                    child:Column(
+                    child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-
-                        Text("Apple Mac Pro",style: TextStyle(fontSize: 18),),
+                        Text(
+                          "Apple Mac Pro",
+                          style: TextStyle(fontSize: 18),
+                        ),
                         Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text("44500",style: TextStyle(fontSize: 18),),
-                              circleFavoriteIcon(
-                                color: Colors.grey,
-                              )
-                            ])],),),
+                              Text(
+                                "44500",
+                                style: TextStyle(fontSize: 18),
+                              ),
+                              CircleFavoriteIcon()
+                            ])
+                      ],
+                    ),
+                  ),
                 )
               ],
             ),
-          );
-        }),
-      ),
+          ),
+        );
+      }),
     );
   }
 }
