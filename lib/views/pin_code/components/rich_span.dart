@@ -26,9 +26,9 @@ class RichSpan extends StatelessWidget {
                   style: TextStyle(
                       color: boldColor,
                       fontWeight: FontWeight.bold,
-                      fontSize: 15)),
+                      fontSize: 18)),
             ],
-            style: TextStyle(color: Colors.black54, fontSize: 15)),
+            style: TextStyle(color: Colors.black54, fontSize: 18)),
         textAlign: TextAlign.center,
       ),
     );
