@@ -55,4 +55,36 @@ class ForgotPasswordCubit extends Cubit<ForgotPasswordStates> {
     }
     emit(ForgotPasswordInit());
   }
+
+  Future<void> verifyCode(BuildContext context) async {
+    if (!formKey.currentState.validate()) return;
+    emit(ForgotPasswordLoading());
+
+    final formData = {
+      'email': emailController.text,
+      'code':pinCodeController
+    };
+    try {
+      final response = await Dio().post(baseUrl + "verify-code",
+          data: formData,
+          options: Options(
+              followRedirects: false,
+              validateStatus: (status) {
+                return status < 500;
+              }));
+
+      final data = response.data as Map;
+
+
+
+    } catch (e, s) {
+      print(e);
+
+      /// Dio Error 500
+      print(s);
+
+      /// Line 50 file login_view.dart
+    }
+    emit(ForgotPasswordInit());
+  }
 }
