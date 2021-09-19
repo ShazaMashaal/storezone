@@ -7,4 +7,5 @@ const pinCodeScreen='/pin_code_password';
 const homeScreen='/home';
 const detailsScreen='/details';
 const cartScreen='/cart';
+const baseUrl='https://student.valuxapps.com/api/';
 

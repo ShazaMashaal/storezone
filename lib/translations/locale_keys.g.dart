@@ -16,6 +16,9 @@ abstract class  LocaleKeys {
   static const register_conditions = 'register.conditions';
   static const register_and = 'register.and';
   static const register_privacy = 'register.privacy';
+  static const register_phoneNumber = 'register.phoneNumber';
+  static const register_confirmPassword = 'register.confirmPassword';
+  static const register_confirmPasswordHint = 'register.confirmPasswordHint';
   static const register = 'register';
   static const forgotPassword_title = 'forgotPassword.title';
   static const forgotPassword_resetPassword = 'forgotPassword.resetPassword';

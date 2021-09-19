@@ -9,7 +9,7 @@ import 'package:storezone/translations/locale_keys.g.dart';
 import 'package:storezone/views/details/components/item_title.dart';
 import 'package:getwidget/getwidget.dart';
 import 'package:storezone/views/home/components/favorite_circle_icon.dart';
-import 'package:storezone/views/register/components/register_button.dart';
+import 'package:storezone/widgets/custom_button.dart';
 
 import 'components/delivery_price.dart';
 import 'components/item_image.dart';

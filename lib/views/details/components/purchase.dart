@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:storezone/views/register/components/register_button.dart';
+import 'package:storezone/widgets/custom_button.dart';
 
 class Purchase extends StatelessWidget {
 
@@ -8,8 +8,8 @@ class Purchase extends StatelessWidget {
     return Column(
 
       children: [
-        registerButton(context, Color(0xFFFFA41C), "Buy Now", 18),
-        registerButton(context, Color(0xFFFFD814), "Add to cart", 18)
+        CustomButton(color: Color(0xFFFFA41C),text: "Buy Now", height:18),
+    CustomButton(color: Color(0xFFFFD814),text: "Add to cart",height: 18)
 
       ],
     );

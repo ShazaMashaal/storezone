@@ -31,12 +31,15 @@ class CodegenLoader extends AssetLoader{
     "continue": "بالمتابعة ، فإنك توافق على",
     "conditions": "شروط استخدام أمازون",
     "and": "و",
-    "privacy": "إشعار الخصوصية"
+    "privacy": "إشعار الخصوصية",
+    "phoneNumber": "رقم الهاتف",
+    "confirmPassword": "تأكيد كلمة المرور",
+    "confirmPasswordHint": "أعد كتابة كلمة المرور"
   },
   "forgotPassword": {
     "title": "نسيت كلمة المرور",
     "resetPassword": "أعد تعيين كلمة المرور",
-    "confirmEmail": "قم بتأكيد بريدك الإلكتروني وسنرسل لك التعليمات."
+    "confirmEmail": "أدخل البريد الإلكتروني المرتبط بحسابك."
   },
   "pinCode": {
     "title": "التحقق من البريد الإلكتروني",
@@ -78,12 +81,15 @@ static const Map<String,dynamic> en = {
     "continue": "By continuing, you agree to Amazon's",
     "conditions": "Conditions of use",
     "and": "and",
-    "privacy": " Privacy Notice"
+    "privacy": " Privacy Notice",
+    "phoneNumber": "Phone Number",
+    "confirmPassword": "Confirm Password",
+    "confirmPasswordHint": "Re-Enter Password"
   },
   "forgotPassword": {
     "title": "Forgot Password",
     "resetPassword": "Reset your password",
-    "confirmEmail": "Confirm your email and we'll send the instructions."
+    "confirmEmail": "enter the email associated with your account."
   },
   "pinCode": {
     "title": "Email Verification",
