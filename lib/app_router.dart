@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:storezone/views/cart/view.dart';
 import 'package:storezone/views/details/view.dart';
 import 'package:storezone/views/forgot_password/view.dart';
 import 'package:storezone/views/home/view.dart';
@@ -26,6 +27,9 @@ class AppRouter{
         return MaterialPageRoute(builder: (_)=>Home());
       case detailsScreen:
         return MaterialPageRoute(builder: (_)=>DetailsView());
+      case cartScreen:
+        return MaterialPageRoute(builder: (_)=>CartView());
+
 
 
     }

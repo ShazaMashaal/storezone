@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:storezone/translations/locale_keys.g.dart';
+import 'package:storezone/views/cart/view.dart';
 import 'package:storezone/views/home/category_view.dart';
 import 'package:storezone/components/app_bar.dart';
 import 'package:storezone/views/home/settings_view.dart';
@@ -22,7 +23,7 @@ class _HomeState extends State<Home> {
     HomeView(),
     CategoryView(),
     FavoritesView(),
-    Scaffold(),
+    CartView(),
     SettingsView(),
   ];
 
