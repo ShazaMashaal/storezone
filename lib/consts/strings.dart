@@ -8,4 +8,4 @@ const homeScreen='/home';
 const detailsScreen='/details';
 const cartScreen='/cart';
 const baseUrl='https://student.valuxapps.com/api/';
-
+const resetPasswordScreen='/reset_password';

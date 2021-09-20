@@ -8,7 +8,7 @@ Padding text(String text, Color color) {
       style: TextStyle(
           color: color,
           fontWeight: FontWeight.w500,
-          fontSize: 15),
+          fontSize:20),
     ),
   );
 }

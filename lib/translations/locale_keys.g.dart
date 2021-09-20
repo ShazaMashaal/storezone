@@ -43,5 +43,10 @@ abstract class  LocaleKeys {
   static const home_settings = 'home.settings';
   static const home_cart = 'home.cart';
   static const home = 'home';
+  static const resetPassword_title = 'resetPassword.title';
+  static const resetPassword_instructions = 'resetPassword.instructions';
+  static const resetPassword_newPassword = 'resetPassword.newPassword';
+  static const resetPassword_confirmNewPassword = 'resetPassword.confirmNewPassword';
+  static const resetPassword = 'resetPassword';
 
 }

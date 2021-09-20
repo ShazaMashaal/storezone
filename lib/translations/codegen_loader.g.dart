@@ -62,6 +62,12 @@ class CodegenLoader extends AssetLoader{
     "favorite": "المفضلة",
     "settings": "الاعدادات",
     "cart": "السلة"
+  },
+  "resetPassword": {
+    "title": "إعادة تعيين كلمة المرور",
+    "instructions": "يجب أن تكون كلمة مرورك الجديدة مختلفة عن كلمة المرور المستخدمة سابقًا.",
+    "newPassword": "كلمة مرور جديدة",
+    "confirmNewPassword": "تأكيد كلمة المرور الجديدة"
   }
 };
 static const Map<String,dynamic> en = {
@@ -112,6 +118,12 @@ static const Map<String,dynamic> en = {
     "favorite": "Favorite",
     "settings": "Settings",
     "cart": "Cart"
+  },
+  "resetPassword": {
+    "title": "Reset Password",
+    "instructions": "Your new password must be different from the previously used password.",
+    "newPassword": "New Password",
+    "confirmNewPassword": "Confirm New Password"
   }
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"ar": ar, "en": en};

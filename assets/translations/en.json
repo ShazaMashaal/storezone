@@ -46,5 +46,11 @@
     "favorite": "Favorite",
     "settings": "Settings",
     "cart": "Cart"
+  },
+  "resetPassword": {
+    "title": "Reset Password",
+    "instructions": "Your new password must be different from the previously used password.",
+    "newPassword": "New Password",
+    "confirmNewPassword": "Confirm New Password"
   }
 }

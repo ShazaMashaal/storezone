@@ -6,6 +6,7 @@ import 'package:storezone/views/home/view.dart';
 import 'package:storezone/views/login/view.dart';
 import 'package:storezone/views/pin_code/view.dart';
 import 'package:storezone/views/register/view.dart';
+import 'package:storezone/views/reset_password/view.dart';
 import 'package:storezone/views/splash/view.dart';
 
 import 'consts/strings.dart';
@@ -23,6 +24,8 @@ class AppRouter{
         return MaterialPageRoute(builder: (_)=>RegisterView());
       case pinCodeScreen:
         return MaterialPageRoute(builder: (_)=>PinCodeView());
+      case resetPasswordScreen:
+        return MaterialPageRoute(builder: (_)=>ResetPasswordView());
       case homeScreen:
         return MaterialPageRoute(builder: (_)=>Home());
       case detailsScreen:
