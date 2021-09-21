@@ -15,7 +15,6 @@ class ResetButton extends StatelessWidget {
       bloc: controller,
       builder: (context, state) => state is ForgotPasswordLoading
           ? CircularProgressIndicator(
-
       )
           : CustomButton(
           color: Color(0xFFFD9A25),

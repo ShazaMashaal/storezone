@@ -3,26 +3,28 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:storezone/consts/strings.dart';
 import 'package:storezone/views/login/states.dart';
+import 'package:storezone/views/pin_code/states.dart';
 
 
-class LoginCubit extends Cubit<LoginStates> {
-  LoginCubit() : super(LoginInit());
+class PinCodeCubit extends Cubit<PinCodeStates> {
+  PinCodeCubit(this.email) : super(PinCodeInit());
 
-  static LoginCubit of(context) => BlocProvider.of(context);
+  final String email;
 
-  TextEditingController emailController = TextEditingController();
-  TextEditingController passwordController = TextEditingController();
+  static PinCodeCubit of(context) => BlocProvider.of(context);
+
+  TextEditingController pinCodeController = TextEditingController();
 
   final formKey = GlobalKey<FormState>();
 
-  Future<void> login(BuildContext context) async {
+  Future<void> verifyCode(BuildContext context) async {
     if (!formKey.currentState.validate()) return;
 
-    emit(LoginLoading());
+    emit(PinCodeLoading());
     final formData =
-        {'email': emailController.text, 'password': passwordController.text};
+    {'email': email, 'pinCode': pinCodeController.text};
     try {
-      final response = await Dio().post(baseUrl + "login",
+      final response = await Dio().post(baseUrl + "verify-code",
           data: formData,
           options: Options(
               followRedirects: false,
@@ -36,13 +38,13 @@ class LoginCubit extends Cubit<LoginStates> {
             behavior: SnackBarBehavior.floating,
             content: Text(data['message'],style: TextStyle(fontSize: 20),)));
       } else {
-        Navigator.pushNamed(context, homeScreen);
+        Navigator.pushNamed(context, resetPasswordScreen,arguments: {});
       }
     } catch (e, s) {
       print(s);
       print(e);
     }
-    emit(LoginInit());
+    emit(PinCodeInit());
 
   }
 

@@ -54,7 +54,8 @@ class CodegenLoader extends AssetLoader{
     "notifications": "الاشعارات",
     "language": "البلد واللغة",
     "aboutUs": "معلومات عنا",
-    "contactUs": "اتصل بنا"
+    "contactUs": "اتصل بنا",
+    "changePassword": "غير كلمة السر"
   },
   "home": {
     "home": "الرئيسية",
@@ -110,8 +111,10 @@ static const Map<String,dynamic> en = {
     "notifications": "notifications",
     "language": "Country & language",
     "aboutUs": "About Us",
-    "contactUs": "Contact Us"
-  },
+    "contactUs": "Contact Us",
+    "changePassword": "Change Password"
+
+},
   "home": {
     "home": "Home",
     "category": "Category",

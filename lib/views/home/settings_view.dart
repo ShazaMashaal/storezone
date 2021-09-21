@@ -25,6 +25,10 @@ class SettingsView extends StatelessWidget {
               icon: Icons.notifications,
             ),
             SettingsItem(
+              title: LocaleKeys.settings_changePassword.tr(),
+              icon: Icons.notifications,
+            ),
+            SettingsItem(
               title:LocaleKeys.settings_language.tr(),
               icon: Icons.language,
             ),

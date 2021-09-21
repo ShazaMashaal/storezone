@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:storezone/views/cart/view.dart';
+import 'package:storezone/views/change_password/view.dart';
 import 'package:storezone/views/details/view.dart';
 import 'package:storezone/views/forgot_password/view.dart';
 import 'package:storezone/views/home/view.dart';
@@ -20,10 +21,13 @@ class AppRouter{
         return MaterialPageRoute(builder: (_)=>LoginView());
       case forgotPasswordScreen:
         return MaterialPageRoute(builder: (_)=>ForgotPasswordView());
+      case forgotPasswordScreen:
+        return MaterialPageRoute(builder: (_)=>ChangePasswordView());
+
       case registerScreen:
         return MaterialPageRoute(builder: (_)=>RegisterView());
       case pinCodeScreen:
-        return MaterialPageRoute(builder: (_)=>PinCodeView());
+        return MaterialPageRoute(builder: (_)=>PinCodeView(),settings: settings);
       case resetPasswordScreen:
         return MaterialPageRoute(builder: (_)=>ResetPasswordView());
       case homeScreen:

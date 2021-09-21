@@ -36,6 +36,8 @@ abstract class  LocaleKeys {
   static const settings_language = 'settings.language';
   static const settings_aboutUs = 'settings.aboutUs';
   static const settings_contactUs = 'settings.contactUs';
+  static const settings_changePassword = 'settings.changePassword';
+
   static const settings = 'settings';
   static const home_home = 'home.home';
   static const home_category = 'home.category';

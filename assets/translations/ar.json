@@ -38,7 +38,9 @@
     "notifications": "الاشعارات",
     "language": "البلد واللغة",
     "aboutUs": "معلومات عنا",
-    "contactUs": "اتصل بنا"
+    "contactUs": "اتصل بنا",
+    "changePassword": "غير كلمة السر"
+
   },
   "home": {
     "home": "الرئيسية",
