@@ -19,8 +19,7 @@ class VerifyPinCodeButton extends StatelessWidget {
                 text: LocaleKeys.pinCode_verify.tr(),
                 color: Color(0xFFFD9A25),
                 textColor: Colors.white,
-                function: () =>
-                    Navigator.pushNamed(context, resetPasswordScreen),
+                function: () => controller.verifyCode(context),
               ));
   }
 }

@@ -7,8 +7,6 @@ import 'package:storezone/components/app_bar.dart';
 import 'package:storezone/views/home/settings_view.dart';
 import 'package:storezone/views/home/home_view.dart';
 import 'package:easy_localization/easy_localization.dart';
-
-import 'components/settings_view_components/settings_app_bar.dart';
 import 'favorite_view.dart';
 
 class Home extends StatefulWidget {

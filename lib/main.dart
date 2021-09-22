@@ -9,7 +9,6 @@ Future <void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
   await GetStorage.init();
-
   runApp( EasyLocalization(
     path: 'assets/translations',
     supportedLocales: [Locale('en'), Locale('ar')],

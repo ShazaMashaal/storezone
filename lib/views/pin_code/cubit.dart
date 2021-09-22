@@ -22,7 +22,7 @@ class PinCodeCubit extends Cubit<PinCodeStates> {
 
     emit(PinCodeLoading());
     final formData =
-    {'email': email, 'pinCode': pinCodeController.text};
+    {'email': email, 'code': pinCodeController.text};
     try {
       final response = await Dio().post(baseUrl + "verify-code",
           data: formData,
@@ -38,7 +38,7 @@ class PinCodeCubit extends Cubit<PinCodeStates> {
             behavior: SnackBarBehavior.floating,
             content: Text(data['message'],style: TextStyle(fontSize: 20),)));
       } else {
-        Navigator.pushNamed(context, resetPasswordScreen,arguments: {});
+        Navigator.pushNamed(context, resetPasswordScreen,arguments: {'email': email, 'code': pinCodeController.text});
       }
     } catch (e, s) {
       print(s);

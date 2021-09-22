@@ -29,7 +29,7 @@ class AppRouter{
       case pinCodeScreen:
         return MaterialPageRoute(builder: (_)=>PinCodeView(),settings: settings);
       case resetPasswordScreen:
-        return MaterialPageRoute(builder: (_)=>ResetPasswordView());
+        return MaterialPageRoute(builder: (_)=>ResetPasswordView(),settings: settings);
       case homeScreen:
         return MaterialPageRoute(builder: (_)=>Home());
       case detailsScreen:

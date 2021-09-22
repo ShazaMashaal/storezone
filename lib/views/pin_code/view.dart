@@ -8,6 +8,7 @@ import 'package:storezone/views/forgot_password/components/custom_appbar.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:storezone/widgets/custom_button.dart';
 import 'components/pin_code.dart';
+import 'components/pin_code_form.dart';
 import 'components/rich_span.dart';
 import 'components/title.dart';
 import 'components/verify_pin_code_button.dart';
@@ -23,27 +24,8 @@ class PinCodeView extends StatelessWidget {
       child: Scaffold(
         appBar: customAppBar(context, LocaleKeys.pinCode_title.tr()),
 
-        body: SingleChildScrollView(
-          child: Form(
-            child: Center(
-              child: Padding(
-                padding: const EdgeInsets.fromLTRB(30, 50, 30, 50),
-                child: Column(
-                  children: [
-                    RichSpan(text: LocaleKeys.pinCode_enterCode.tr()+" ",boldText: LocaleKeys.login_email.tr(),boldColor: Colors.black,),
-                    SizedBox(height: MediaQuery.of(context).size.height/14,),
-                    PinCode(),
-                    SizedBox(height: MediaQuery.of(context).size.height/20,),
-
-                    RichSpan(text: LocaleKeys.pinCode_didntRecieveCode.tr()+" ",boldText:LocaleKeys.pinCode_resend.tr(),boldColor: Color(0xFFFD9A25),),
-                    VerifyPinCodeButton(),
-                  ],
-                ),
-              ),
-            ),
-          ),
-        ),
-      ),
+        body: PinCodeForm(),
+    )
     );
   }
 }
