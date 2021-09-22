@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:storezone/models/banner.dart';
@@ -26,3 +28,6 @@ class HomeBanner extends StatelessWidget {
     );
   }
 }
+
+//TODO : HOW TO READ MODEl
+//TODO:HOW TO REACH TO ANY NESTED PROPERTY IN IT
