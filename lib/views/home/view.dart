@@ -49,6 +49,7 @@ class _HomeState extends State<Home> {
       ),
       appBar:currentIndex==_widgetOptions.length-1? null : appBar(context),
       body: _widgetOptions.elementAt(currentIndex),
+      drawer: Drawer(),
     );
   }
 }

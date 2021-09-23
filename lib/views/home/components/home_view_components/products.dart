@@ -1,17 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:storezone/consts/strings.dart';
 
+import '../../cubit.dart';
 import '../favorite_circle_icon.dart';
 
 class Products extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return  GridView.count(
-      childAspectRatio: .8,
+    final controller=HomeCubit.of(context);
+    return  GridView.builder(
       shrinkWrap: true,
+      // primary: false,
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        childAspectRatio: .8,
+        crossAxisCount: 2
+      ),
       physics: NeverScrollableScrollPhysics(),
-      crossAxisCount: 2,
-      children: List.generate(10, (index) {
+      itemCount: 20,
+      itemBuilder: (context, index) {
         return GestureDetector(
           onTap: (){Navigator.pushNamed(context, detailsScreen);},
           child: Card(
@@ -22,7 +28,7 @@ class Products extends StatelessWidget {
                   flex: 6,
                   child: Container(
                     child: Image.network(
-                      "https://m.media-amazon.com/images/I/61OvV27-44L._AC_SL1500_.jpg",
+                      controller.products[index].image,
                       fit: BoxFit.fill,
                     ),
                   ),
@@ -55,7 +61,7 @@ class Products extends StatelessWidget {
             ),
           ),
         );
-      }),
+      },
     );
   }
 }

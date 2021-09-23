@@ -12,6 +12,7 @@ import 'components/home_view_components/products.dart';
 import 'components/home_view_discount_card.dart';
 import 'components/home_view_sign_card.dart';
 import 'cubit.dart';
+import 'states.dart';
 
 class HomeView extends StatefulWidget {
 
@@ -25,45 +26,47 @@ class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context)=>HomeCubit(),
-      child: SingleChildScrollView(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: <Widget>[
-            Stack(
-              children: [
-                Column(children: [
-                  HomeBanner(),
-                  HomeListViewBackGround(),
-                ]),
-                Positioned(
-                  top: MediaQuery.of(context).size.height / 3.8,
-                  left: 0.0,
-                  right: 0.0,
-                  bottom: 5.0,
-                  child: Row(
-                    children: [
-                      Flexible(
-                        child: ListView.builder(
-                          scrollDirection: Axis.horizontal,
-                          itemBuilder: (BuildContext context, int index) {
-                            if (index == 0) return SignCard();
-                            return DiscountCard();
-                          },
+      create: (context)=>HomeCubit()..getData(),
+      child: BlocBuilder<HomeCubit, HomeStates>(
+        builder: (context, state) => state is HomeLoading?CircularProgressIndicator():  SingleChildScrollView(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              Stack(
+                children: [
+                  Column(children: [
+                    HomeBanner(),
+                    HomeListViewBackGround(),
+                  ]),
+                  Positioned(
+                    top: MediaQuery.of(context).size.height / 3.8,
+                    left: 0.0,
+                    right: 0.0,
+                    bottom: 5.0,
+                    child: Row(
+                      children: [
+                        Flexible(
+                          child: ListView.builder(
+                            scrollDirection: Axis.horizontal,
+                            itemBuilder: (BuildContext context, int index) {
+                              if (index == 0) return SignCard();
+                              return DiscountCard();
+                            },
+                          ),
                         ),
-                      ),
-                    ],
-                  ),
-                )
-              ],
-            ),
-            // Button(),
+                      ],
+                    ),
+                  )
+                ],
+              ),
+              // Button(),
 
-            HomeTitles(title: "Categories"),
-            CategoriesList(),
-            HomeTitles(title: "Products"),
-            Products()
-          ],
+              HomeTitles(title: "Categories"),
+              CategoriesList(),
+              HomeTitles(title: "Products"),
+              Products()
+            ],
+          ),
         ),
       ),
     );

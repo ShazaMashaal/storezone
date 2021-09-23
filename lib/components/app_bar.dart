@@ -7,10 +7,13 @@ import '../views/home/components/app_bar_color.dart';
 AppBar appBar(context){
   return  AppBar(
     toolbarHeight: heightMediaQuery(context, 11),
-      automaticallyImplyLeading: false,
+    //TODO ; REMOVE THIS LEADING
+    //
+    /*
+
+     */
+    /// note
     flexibleSpace:AppBarColor(),
     title:  AppBarSearch(),
-
     );
-
 }

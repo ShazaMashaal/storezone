@@ -1,4 +1,3 @@
-import 'dart:html';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -12,20 +11,17 @@ class HomeBanner extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller=HomeCubit.of(context);
-   Future <List<Banners>> banners=controller.getBanners();
-   print(banners);
-    return BlocBuilder(
-      bloc: controller,
-      builder:(context,state)=>state is HomeLoading?CircularProgressIndicator(): Container(
-          height: MediaQuery.of(context).size.height / 3.5,
-          width: MediaQuery.of(context).size.width,
-          decoration: BoxDecoration(
-              image: DecorationImage(
-                fit: BoxFit.fill,
-                image: NetworkImage(
-                    "https://img.youm7.com/xlarge/202109010246394639.jpg"),
-              ))),
-    );
+   // Future <List<Banners>> banners=controller.getBanners();
+   // print(banners);
+    return Container(
+        height: MediaQuery.of(context).size.height / 3.5,
+        width: MediaQuery.of(context).size.width,
+        decoration: BoxDecoration(
+            image: DecorationImage(
+              fit: BoxFit.fill,
+              image: NetworkImage(
+                  "https://img.youm7.com/xlarge/202109010246394639.jpg"),
+            )));
   }
 }
 
