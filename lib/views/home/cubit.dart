@@ -20,7 +20,7 @@ class HomeCubit extends Cubit<HomeStates> {
     emit(HomeLoading());
     final response = await Dio().get(baseUrl+'home');
     final data = response.data as Map;
-    Home home = Home.fromJson(data);
+    HomeModel home = HomeModel.fromJson(data);
     banners.clear();
     products.clear();
     banners.addAll(home.data.banners);

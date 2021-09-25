@@ -1,9 +1,9 @@
-class Home {
+class HomeModel {
   Data data;
 
-  Home({this.data});
+  HomeModel({this.data});
 
-  Home.fromJson(Map<String, dynamic> json) {
+  HomeModel.fromJson(Map<String, dynamic> json) {
     data = json['data'] != null ? new Data.fromJson(json['data']) : null;
   }
 

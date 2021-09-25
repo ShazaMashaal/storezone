@@ -15,19 +15,16 @@ bool isFavorite = false;
 class _CircleFavoriteIconState extends State<CircleFavoriteIcon> {
   @override
   Widget build(BuildContext context) {
-    return CircleAvatar(
-      backgroundColor: isFavorite ? Color(0xFFFD9A25) : Colors.grey,
-      radius: 17,
-      child: IconButton(
+    return  IconButton(
         padding: EdgeInsets.zero,
-        icon: Icon(Icons.favorite_border),
-        color: Colors.white,
+        icon:CircleAvatar(
+            backgroundColor: isFavorite ? Color(0xFFFD9A25) : Colors.grey,
+            radius: 17,child: Icon(Icons.favorite_border,color: Colors.white,)),
         onPressed: () {
           setState(() {
             isFavorite = !isFavorite;
           });
         },
-      ),
-    );
+      );
   }
 }

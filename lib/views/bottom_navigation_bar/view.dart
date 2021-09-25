@@ -1,13 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:storezone/translations/locale_keys.g.dart';
 import 'package:storezone/views/cart/view.dart';
 import 'package:storezone/views/category/view.dart';
 import 'package:storezone/views/home/view.dart';
 import 'package:storezone/components/app_bar.dart';
-import 'package:storezone/views/home/view.dart';
-import 'package:storezone/views/home/view.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:storezone/views/login/cubit.dart';
 import 'package:storezone/views/settings/view.dart';
 import 'components/custom_drawer.dart';
 import '../favorite/view.dart';
@@ -31,7 +31,9 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: CustomDrawer(),
+      drawer:BlocProvider(
+          create:(context)=>LoginCubit(),
+          child: CustomDrawer()),
       bottomNavigationBar: BottomNavigationBar(
         selectedItemColor: Color(0xFFFD9A25),
         type: BottomNavigationBarType.fixed,

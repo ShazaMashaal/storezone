@@ -1,9 +1,9 @@
-class Category {
+class CategoriesModel {
   List<Data> data;
 
-  Category({this.data});
+  CategoriesModel({this.data});
 
-  Category.fromJson(Map<String, dynamic> json) {
+  CategoriesModel.fromJson(Map<String, dynamic> json) {
     if (json['data'] != null) {
       data = new List<Data>();
       json['data'].forEach((v) {

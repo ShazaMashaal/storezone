@@ -24,7 +24,7 @@ class SignCard extends StatelessWidget {
                 padding: EdgeInsets.symmetric(vertical: 10),
                 child: Text("Sign in for the best experience")),
             Spacer(),
-            CustomButton(color:Color(0xFFFD9A25),text: "Sign In",height: 25,
+            CustomButton(color:Color(0xFFFD9A25),text: "Sign In",height: 30,
                 textColor: Colors.white,
                 function: () => Navigator.pushNamed(context, loginScreen)),
             Container(

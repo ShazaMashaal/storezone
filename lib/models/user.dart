@@ -1,6 +1,6 @@
 class UserModel {
   bool status;
-  Null message;
+  String message;
   Data data;
 
   UserModel({this.status, this.message, this.data});
