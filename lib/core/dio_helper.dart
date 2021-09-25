@@ -1,10 +1,10 @@
 // import 'package:dio/dio.dart';
+// import 'package:storezone/consts/strings.dart';
 //
-// import '../../constants.dart';
 //
 // class DioHelper {
 //
-//   static final _baseUrl = BASE_URL;
+//   static final _baseUrl = baseUrl;
 //
 //   static Dio dioSingleton = Dio()..options.baseUrl = _baseUrl;
 //

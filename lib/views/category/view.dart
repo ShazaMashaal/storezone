@@ -1,10 +1,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
-import 'package:storezone/views/home/components/category_view_components/category_image.dart';
+import 'package:storezone/views/category/components/category_image.dart';
 
-import 'components/category_view_components/category_name.dart';
-import 'components/category_view_components/grey_back_arrow.dart';
+import 'components/category_name.dart';
+import 'components/grey_back_arrow.dart';
 
 class CategoryView extends StatefulWidget {
   @override

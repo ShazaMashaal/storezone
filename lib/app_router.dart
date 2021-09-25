@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:storezone/views/bottom_navigation_bar/view.dart';
 import 'package:storezone/views/cart/view.dart';
 import 'package:storezone/views/change_password/view.dart';
 import 'package:storezone/views/details/view.dart';
 import 'package:storezone/views/forgot_password/view.dart';
-import 'package:storezone/views/home/view.dart';
 import 'package:storezone/views/login/view.dart';
 import 'package:storezone/views/pin_code/view.dart';
 import 'package:storezone/views/register/view.dart';

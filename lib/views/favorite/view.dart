@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:storezone/views/home/components/category_view_components/category_image.dart';
-import 'package:storezone/views/home/components/favorite_circle_icon.dart';
-import 'components/favorite_view_components/favorite_item_name.dart';
-import 'components/favorite_view_components/old_and_new_price.dart';
+import 'package:storezone/views/category/components/category_image.dart';
+import 'components/favorite_circle_icon.dart';
+import 'components/favorite_item_name.dart';
+import 'components/old_and_new_price.dart';
 
 class FavoritesView extends StatelessWidget {
   @override

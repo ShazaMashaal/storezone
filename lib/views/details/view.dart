@@ -8,7 +8,6 @@ import 'package:storezone/components/horizontal_rating_bar.dart';
 import 'package:storezone/translations/locale_keys.g.dart';
 import 'package:storezone/views/details/components/item_title.dart';
 import 'package:getwidget/getwidget.dart';
-import 'package:storezone/views/home/components/favorite_circle_icon.dart';
 import 'package:storezone/widgets/custom_button.dart';
 
 import 'components/delivery_price.dart';

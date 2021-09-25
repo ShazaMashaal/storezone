@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:storezone/views/home/components/favorite_circle_icon.dart';
+import 'package:storezone/views/favorite/components/favorite_circle_icon.dart';
 
 class ItemImage extends StatelessWidget {
 

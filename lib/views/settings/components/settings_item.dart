@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:storezone/views/home/components/category_view_components/grey_back_arrow.dart';
+import 'package:storezone/views/category/components/grey_back_arrow.dart';
 
 class SettingsItem extends StatelessWidget {
   final String title;

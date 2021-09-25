@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:storezone/consts/strings.dart';
 
-import '../../cubit.dart';
-import '../favorite_circle_icon.dart';
+import '../cubit.dart';
+import '../../favorite/components/favorite_circle_icon.dart';
 
 class Products extends StatelessWidget {
   @override
