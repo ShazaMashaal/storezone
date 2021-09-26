@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:storezone/views/category/components/category_image.dart';
+import 'package:storezone/views/category/cubit.dart';
 import 'components/favorite_circle_icon.dart';
 import 'components/favorite_item_name.dart';
 import 'components/old_and_new_price.dart';
@@ -23,7 +24,8 @@ class FavoritesView extends StatelessWidget {
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                CategoryImage(),
+                //TODO : same blocprovider
+                CategoryImage(CategoriesCubit.of(context).categories[index].image),
                 Expanded(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,

@@ -13,7 +13,7 @@ class CategoriesCubit extends Cubit<CategoriesStates> {
 
   static CategoriesCubit of(context) => BlocProvider.of(context);
 
-  List<Data> categories = [];
+  List<CategoriesData> categories = [];
 
 
   Future<void> getCategories()async{
@@ -21,8 +21,9 @@ class CategoriesCubit extends Cubit<CategoriesStates> {
     final response = await Dio().get(baseUrl+'categories');
     final data = response.data as Map;
     CategoriesModel category = CategoriesModel.fromJson(data);
+    print(category.data.data);
     categories.clear();
-    categories.addAll(category.data);
+    categories.addAll(category.data.data);
     emit(CategoriesInit());
   }
 

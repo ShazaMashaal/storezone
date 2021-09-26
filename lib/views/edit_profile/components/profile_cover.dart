@@ -7,9 +7,9 @@ import 'package:storezone/views/edit_profile/cubit.dart';
       image: DecorationImage(
         colorFilter: ColorFilter.mode(
             Colors.black.withOpacity(0.2), BlendMode.dstATop),
-        image: NetworkImage(
+        image: EditProfileCubit.of(context).file == null ?  NetworkImage(
           AppStorage.getImage,
-        ),
+        ) : FileImage( EditProfileCubit.of(context).file),
         fit: BoxFit.cover,
       ),
     );

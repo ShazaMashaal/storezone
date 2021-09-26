@@ -20,7 +20,7 @@ class AppStorage {
   }
   static String get getToken=> _box.read("token");
 
-  static bool isLogged ()=>_box.hasData('token');
+  static bool get isLogged =>_box.hasData('token');
 
   static String get  getImage=> _box.read("image");
   static String get  getName=> _box.read("name");

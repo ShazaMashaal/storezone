@@ -15,6 +15,7 @@ class LoginCubit extends Cubit<LoginStates> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   UserModel user;
+  bool _passwordVisible = false;
 
   final formKey = GlobalKey<FormState>();
 
@@ -50,6 +51,11 @@ class LoginCubit extends Cubit<LoginStates> {
     }
     emit(LoginInit());
   }
+  //TODO: complete
+  bool isSecured(){
+    return !_passwordVisible;
+  }
+
 }
 
 

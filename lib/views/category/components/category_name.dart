@@ -13,9 +13,7 @@ class CategoryName extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller=CategoriesCubit.of(context);
-    return BlocBuilder(
-        bloc: controller,
-        builder:(context,state)=>state is CategoriesLoading?Center(child: CircularProgressIndicator()): Container(
+    return Container(
       padding: EdgeInsets.only(bottom: 30),
       width: MediaQuery.of(context).size.width * 0.55,
       child: Text(
@@ -23,7 +21,6 @@ class CategoryName extends StatelessWidget {
         style: TextStyle(
           fontSize: 18,
         ),
-      ),)
-    );
+      ),);
   }
 }

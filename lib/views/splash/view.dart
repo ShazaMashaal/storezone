@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:storezone/consts/strings.dart';
+import 'package:storezone/core/storage.dart';
 import 'package:storezone/views/splash/widgets/splash_content.dart';
 
 class SplashView extends StatefulWidget {
@@ -12,7 +13,7 @@ class _SplashViewState extends State<SplashView> {
   @override
   void initState() {
     Future.delayed(Duration(seconds: 3), () {
-      GetStorage().read("token") != null
+      AppStorage.isLogged
           ? Navigator.pushNamed(context, homeScreen)
           : Navigator.pushNamed(context, loginScreen);
     });

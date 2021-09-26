@@ -8,9 +8,12 @@ class FullScreenImage extends StatelessWidget {
     return Scaffold(
         body: Container(
           width: double.infinity,
+          height: double.infinity,
+
           child: Center(
             child: Image.network(
               AppStorage.getImage,
+              fit: BoxFit.cover,
             ),
           ),
         ),

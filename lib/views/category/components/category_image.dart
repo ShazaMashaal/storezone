@@ -5,35 +5,34 @@ import 'package:storezone/views/category/components/states.dart';
 import '../cubit.dart';
 
 class CategoryImage extends StatelessWidget {
-  final int index;
-
-  const CategoryImage({Key key, this.index}) : super(key: key);
+final String image;
+CategoryImage(this.image);
 //TODO: Try Shimmer
   @override
   Widget build(BuildContext context) {
-    final controller=CategoriesCubit.of(context);
-    return BlocBuilder(
-      bloc: controller,
-      builder:(context,state)=>state is CategoriesLoading?Center(child: CircularProgressIndicator()): Padding(
+    return   Padding(
         padding: const EdgeInsets.all(5.0),
         child: ConstrainedBox(
           constraints: BoxConstraints(
             maxWidth: MediaQuery.of(context).size.width * 0.3,
             maxHeight: MediaQuery.of(context).size.width * 0.3,
           ),
-          child: Image.network(
-            controller.categories[index].image,
-            fit: BoxFit.fill,
-            loadingBuilder: (BuildContext context, Widget child,
-                ImageChunkEvent loadingProgress) {
-              if (loadingProgress == null) return child;
-              return Center(
-                child: CircularProgressIndicator(),
-              );
-            },
+          child: FadeInImage( //TODO: this
+            placeholder: AssetImage("assets/images/placeholder.gif"),
+            imageErrorBuilder:    (BuildContext context, Object exception, StackTrace stackTrace) {
+            return  Image.asset("assets/images/placeholder.gif");
+          },
+            //TODO:ابعت ال image من برة
+            image: NetworkImage(image),
           ),
+          //TODO: connectivity check internet ..... and refresh screen
+//TODO: what is the difference between the two fadeInImage
+          // child: FadeInImage.assetNetwork( //TODO: and This
+          //     placeholder: 'assets/images/placeholder.gif',
+          //     image: controller.categories[index].image,
+          //   imageErrorBuilder: ,
+          // ),
         ),
-      ),
     );
   }
 }

@@ -15,15 +15,7 @@ final  BoxConstraints constraints;
       bloc: controller,
       builder:(context,state)=> GestureDetector(
         //TODO : navigating to fill screen image doesn't work
-        onTap: ()=>controller.fullScreenImage(context),
-        // child: ClipOval(
-        //   child:controller.file == null ? Image.network(
-        //     AppStorage.getImage,
-        //     width: constraints.maxHeight / 2.5,
-        //     height: constraints.maxHeight / 2.5,
-        //     fit: BoxFit.cover,
-        //   ):FileImage(controller.file),
-        // ),
+        onTap: ()=>Navigator.pushNamed(context,fullImageScreen),
         child: Container(
           // child: Icon(
           //   Icons.person_outline,

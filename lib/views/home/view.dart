@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:storezone/core/storage.dart';
 import 'package:storezone/views/bottom_navigation_bar/components/home_banner.dart';
+import 'package:storezone/views/category/components/states.dart';
 import 'package:storezone/views/home/components/home_list_view_background.dart';
 import 'components/categories_list.dart';
 import 'components/home_titles.dart';
@@ -26,7 +27,7 @@ class _HomeViewState extends State<HomeView> {
     return BlocProvider(
       create: (context)=>HomeCubit()..getData(),
       child: BlocBuilder<HomeCubit, HomeStates>(
-        builder: (context, state) => state is HomeLoading?Center(child: CircularProgressIndicator()):  SingleChildScrollView(
+        builder: (context, state) => state is HomeLoading&&  state is CategoriesLoading?Center(child: CircularProgressIndicator()):  SingleChildScrollView(
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
@@ -47,7 +48,7 @@ class _HomeViewState extends State<HomeView> {
                           child: ListView.builder(
                             scrollDirection: Axis.horizontal,
                             itemBuilder: (BuildContext context, int index) {
-                              if (index == 0 && !AppStorage.isLogged()) return SignCard();
+                              if (index == 0 && !AppStorage.isLogged) return SignCard();
                               return DiscountCard();
                             },
                           ),

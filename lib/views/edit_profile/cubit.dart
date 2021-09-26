@@ -30,6 +30,7 @@ class EditProfileCubit extends Cubit<EditProfileStates> {
       TextEditingController(text: AppStorage.getEmail);
 
 //TODO: preventing from invalid inputs
+  //TODO:form with two different keys
 
   Future<void> update() async {
     emit(EditProfileLoading());
@@ -72,30 +73,13 @@ class EditProfileCubit extends Cubit<EditProfileStates> {
     Navigator.pushNamed(context, fullImageScreen);
   }
 
-//TODO: دي عشان ايه
   @override
   Future<void> close() {
     nameController.dispose();
+    phoneController.dispose();
+    emailController.dispose();
+
     return super.close();
   }
 }
 
-// Future<void> getProfileData(BuildContext context) async {
-//   emit(EditProfileLoading());
-//   try {
-//
-//     final response = await Dio().get(baseUrl + "profile",
-//         options: Options(
-//           contentType: 'application/json',
-//           method: 'Get',
-//           validateStatus: (status) => status < 500,
-//           headers:  {'Authorization': AppStorage.getToken},
-//         ));
-//     final data = response.data as Map;
-//     user=UserModel.fromJson(data);
-//   } catch (e, s) {
-//     print(s);
-//     print(e);
-//   }
-//   emit(EditProfileInit());
-// }
