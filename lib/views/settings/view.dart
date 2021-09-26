@@ -19,6 +19,7 @@ class SettingsView extends StatelessWidget {
             SettingsItem(
               title:LocaleKeys.settings_account.tr() ,
               icon: Icons.person,
+              function: ()=>Navigator.pushNamed(context, editProfileScreen),
             ),
             SettingsItem(
               title: LocaleKeys.settings_notifications.tr(),

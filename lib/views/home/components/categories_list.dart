@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../cubit.dart';
+
 class CategoriesList extends StatelessWidget {
 
   @override

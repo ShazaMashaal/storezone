@@ -50,7 +50,7 @@ class CodegenLoader extends AssetLoader{
   },
   "settings": {
     "title": "الاعدادات",
-    "account": "الحساب",
+    "account": "تعديل الملف الشخصي",
     "notifications": "الاشعارات",
     "language": "البلد واللغة",
     "aboutUs": "معلومات عنا",
@@ -69,6 +69,9 @@ class CodegenLoader extends AssetLoader{
     "instructions": "يجب أن تكون كلمة مرورك الجديدة مختلفة عن كلمة المرور المستخدمة سابقًا.",
     "newPassword": "كلمة مرور جديدة",
     "confirmNewPassword": "تأكيد كلمة المرور الجديدة"
+  },
+  "editProfile": {
+    "update": "تعديل"
   }
 };
 static const Map<String,dynamic> en = {
@@ -107,14 +110,13 @@ static const Map<String,dynamic> en = {
   },
   "settings": {
     "title": "Settings",
-    "account": "Account",
+    "account": "Edit Profile",
     "notifications": "notifications",
     "language": "Country & language",
     "aboutUs": "About Us",
     "contactUs": "Contact Us",
     "changePassword": "Change Password"
-
-},
+  },
   "home": {
     "home": "Home",
     "category": "Category",
@@ -127,6 +129,9 @@ static const Map<String,dynamic> en = {
     "instructions": "Your new password must be different from the previously used password.",
     "newPassword": "New Password",
     "confirmNewPassword": "Confirm New Password"
+  },
+  "editProfile": {
+    "update": "Update"
   }
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"ar": ar, "en": en};

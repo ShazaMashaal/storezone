@@ -3,6 +3,8 @@ import 'package:storezone/views/bottom_navigation_bar/view.dart';
 import 'package:storezone/views/cart/view.dart';
 import 'package:storezone/views/change_password/view.dart';
 import 'package:storezone/views/details/view.dart';
+import 'package:storezone/views/edit_profile/components/full_screen_image.dart';
+import 'package:storezone/views/edit_profile/view.dart';
 import 'package:storezone/views/forgot_password/view.dart';
 import 'package:storezone/views/login/view.dart';
 import 'package:storezone/views/pin_code/view.dart';
@@ -36,6 +38,10 @@ class AppRouter{
         return MaterialPageRoute(builder: (_)=>DetailsView());
       case cartScreen:
         return MaterialPageRoute(builder: (_)=>CartView());
+      case editProfileScreen:
+        return MaterialPageRoute(builder: (_)=>EditProfileView());
+      case fullImageScreen:
+          return MaterialPageRoute(builder: (_)=>FullScreenImage());
 
 
 

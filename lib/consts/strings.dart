@@ -10,4 +10,6 @@ const cartScreen='/cart';
 const baseUrl='https://student.valuxapps.com/api/';
 const resetPasswordScreen='/reset_password';
 const changePasswordScreen='/change_password';
+const editProfileScreen='/edit_profile';
+const fullImageScreen='/edit_profile';
 

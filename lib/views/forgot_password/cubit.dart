@@ -57,4 +57,3 @@ class ForgotPasswordCubit extends Cubit<ForgotPasswordStates> {
 }
 
 
-//TODO: use get storage to store data after login or sign up

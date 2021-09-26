@@ -34,13 +34,12 @@
   },
   "settings": {
     "title": "الاعدادات",
-    "account": "الحساب",
+    "account": "تعديل الملف الشخصي",
     "notifications": "الاشعارات",
     "language": "البلد واللغة",
     "aboutUs": "معلومات عنا",
     "contactUs": "اتصل بنا",
     "changePassword": "غير كلمة السر"
-
   },
   "home": {
     "home": "الرئيسية",
@@ -54,5 +53,8 @@
     "instructions": "يجب أن تكون كلمة مرورك الجديدة مختلفة عن كلمة المرور المستخدمة سابقًا.",
     "newPassword": "كلمة مرور جديدة",
     "confirmNewPassword": "تأكيد كلمة المرور الجديدة"
+  },
+  "editProfile": {
+    "update": "تعديل"
   }
 }

@@ -1,8 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:get_storage/get_storage.dart';
 import 'package:storezone/consts/strings.dart';
+import 'package:storezone/core/storage.dart';
 import 'package:storezone/models/user.dart';
 import 'package:storezone/views/login/states.dart';
 
@@ -40,14 +40,9 @@ class LoginCubit extends Cubit<LoginStates> {
             behavior: SnackBarBehavior.floating,
             content: Text(user.message,style: TextStyle(fontSize: 20),)));
       } else {
-        GetStorage().write('name', user.data.name);
-        GetStorage().write('image', user.data.image);
-        GetStorage().write('email', user.data.email);
-        GetStorage().write('points', user.data.points);
-        GetStorage().write('credit', user.data.credit);
-        GetStorage().write('id', user.data.id);
-        GetStorage().write('token', user.data.token);
-        Navigator.pushNamed(context, homeScreen);
+
+        AppStorage.cashUserInfo(user,context: context);
+
       }
     } catch (e, s) {
       print(s);
@@ -56,4 +51,6 @@ class LoginCubit extends Cubit<LoginStates> {
     emit(LoginInit());
   }
 }
+
+
 

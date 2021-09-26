@@ -20,23 +20,27 @@ class SignCard extends StatelessWidget {
               "Welcome",
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
             ),
-            Container(
-                padding: EdgeInsets.symmetric(vertical: 10),
-                child: Text("Sign in for the best experience")),
-            Spacer(),
-            CustomButton(color:Color(0xFFFD9A25),text: "Sign In",height: 30,
-                textColor: Colors.white,
-                function: () => Navigator.pushNamed(context, loginScreen)),
-            Container(
-                padding: EdgeInsets.symmetric(vertical: 5, horizontal: 5),
-                child: RichText(
-                  text: TextSpan(
-                      text: "Create an account",
-                      style: TextStyle(color: Colors.blue),
-                      recognizer: TapGestureRecognizer()
-                        ..onTap =
-                            () => Navigator.pushNamed(context, registerScreen)),
-                ))
+            Text("Sign in for the best experience"),
+
+            Expanded(
+
+                child: Column(
+              children: [
+                CustomButton(color:Color(0xFFFD9A25),text: "Sign In",height: 30,
+                    textColor: Colors.white,
+                    function: () => Navigator.pushNamed(context, loginScreen)),
+                Container(
+                    padding: EdgeInsets.only(top: 3),
+                    child: RichText(
+                      text: TextSpan(
+                          text: "Create an account",
+                          style: TextStyle(color: Colors.blue),
+                          recognizer: TapGestureRecognizer()
+                            ..onTap =
+                                () => Navigator.pushNamed(context, registerScreen)),
+                    ))
+              ],
+            ))
           ],
         ),
       )),

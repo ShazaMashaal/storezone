@@ -6,12 +6,7 @@ import 'package:storezone/views/bottom_navigation_bar/components/app_bar_color.d
 AppBar appBar(context){
   return  AppBar(
     toolbarHeight: heightMediaQuery(context, 11),
-    //TODO ; REMOVE THIS LEADING
-    //
-    /*
 
-     */
-    /// note
     flexibleSpace:AppBarColor(),
     title:  AppBarSearch(),
     );

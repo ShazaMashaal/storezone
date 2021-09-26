@@ -3,14 +3,12 @@ import 'package:flutter/material.dart';
 class CircleFavoriteIcon extends StatefulWidget {
   // bool isFavorite = false;
 
-//TODO: why response is slower when putting isFavorite
 
   @override
   _CircleFavoriteIconState createState() => _CircleFavoriteIconState();
 }
 bool isFavorite = false;
 
-//TODO: Here
 
 class _CircleFavoriteIconState extends State<CircleFavoriteIcon> {
   @override

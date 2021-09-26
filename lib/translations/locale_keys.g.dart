@@ -37,7 +37,6 @@ abstract class  LocaleKeys {
   static const settings_aboutUs = 'settings.aboutUs';
   static const settings_contactUs = 'settings.contactUs';
   static const settings_changePassword = 'settings.changePassword';
-
   static const settings = 'settings';
   static const home_home = 'home.home';
   static const home_category = 'home.category';
@@ -50,5 +49,7 @@ abstract class  LocaleKeys {
   static const resetPassword_newPassword = 'resetPassword.newPassword';
   static const resetPassword_confirmNewPassword = 'resetPassword.confirmNewPassword';
   static const resetPassword = 'resetPassword';
+  static const editProfile_update = 'editProfile.update';
+  static const editProfile = 'editProfile';
 
 }

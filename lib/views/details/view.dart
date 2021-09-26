@@ -37,7 +37,6 @@ class DetailsView extends StatelessWidget {
               ItemTitle(),
               ItemImage(),
               ItemPrice(),
-              //TODO: Which better(Row or RichText)?
               // RichText(
               //     textAlign: TextAlign.start,
               //     text: TextSpan(

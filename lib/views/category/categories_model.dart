@@ -12,7 +12,6 @@ class CategoriesModel {
     }
   }
 
-
 }
 
 class Data {

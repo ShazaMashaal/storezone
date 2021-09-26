@@ -26,5 +26,3 @@ class HomeBanner extends StatelessWidget {
         ));
   }
 }
-//TODO : HOW TO READ MODEl
-//TODO:HOW TO REACH TO ANY NESTED PROPERTY IN IT
