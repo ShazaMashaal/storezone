@@ -72,6 +72,13 @@ class CodegenLoader extends AssetLoader{
   },
   "editProfile": {
     "update": "تعديل"
+  },
+  "changePassword": {
+    "newPassword": "كلمة المرور الجديدة",
+    "oldPassword": "كلمة السرالحالية",
+    "confirmNewPassword": "تأكيد كلمة السر الجديدة",
+    "confirmNewPasswordHint": "أعد كتابة كلمة السر الجديدة",
+    "changePassword": "غير كلمة السر"
   }
 };
 static const Map<String,dynamic> en = {
@@ -132,6 +139,13 @@ static const Map<String,dynamic> en = {
   },
   "editProfile": {
     "update": "Update"
+  },
+  "changePassword": {
+    "newPassword": "New Password",
+    "oldPassword": "Current Password",
+    "confirmNewPassword": "Confirm New Password",
+    "confirmNewPasswordHint": "Re-Enter New Password",
+    "changePassword": "Change Your Password"
   }
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"ar": ar, "en": en};

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:storezone/views/bottom_navigation_bar/view.dart';
 import 'package:storezone/views/cart/view.dart';
+import 'package:storezone/views/category_products/view.dart';
 import 'package:storezone/views/change_password/view.dart';
 import 'package:storezone/views/details/view.dart';
 import 'package:storezone/views/edit_profile/components/full_screen_image.dart';
@@ -42,7 +43,10 @@ class AppRouter{
         return MaterialPageRoute(builder: (_)=>EditProfileView());
       case fullImageScreen:
           return MaterialPageRoute(builder: (_)=>FullScreenImage());
-
+      case changePasswordScreen:
+        return MaterialPageRoute(builder: (_)=>ChangePasswordView());
+      case categoryProductsScreen:
+        return MaterialPageRoute(builder: (_)=>CategoryProducts(),settings: settings);
 
 
     }

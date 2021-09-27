@@ -56,5 +56,12 @@
   },
   "editProfile": {
     "update": "Update"
+  },
+  "changePassword": {
+    "newPassword": "New Password",
+    "oldPassword": "Current Password",
+    "confirmNewPassword": "Confirm New Password",
+    "confirmNewPasswordHint": "Re-Enter New Password",
+    "changePassword": "Change Your Password"
   }
 }

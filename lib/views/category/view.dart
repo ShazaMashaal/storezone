@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shimmer/shimmer.dart';
+import 'package:storezone/consts/strings.dart';
 import 'package:storezone/views/category/components/category_image.dart';
 import 'package:storezone/views/category/components/states.dart';
 import 'package:storezone/views/category/cubit.dart';
@@ -28,18 +29,21 @@ class _CategoryViewState extends State<CategoryView> {
             itemBuilder: (context, index) {
               return Container(
                 width: MediaQuery.of(context).size.width * 0.94,
-                child: Card(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(0.0),
-                  ),
-                  color: Colors.white,
-                  elevation: 0,
-                  child: Row(
-                    children: <Widget>[
-                      CategoryImage(""),
-                      CategoryName(index: index,),
-                      GreyForwardArrow(),
-                    ],
+                child: GestureDetector(
+                  onTap: ()=>Navigator.pushNamed(context, categoryProductsScreen,arguments:{'id':CategoriesCubit.of(context).categories[index].id} ),
+                  child: Card(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(0.0),
+                    ),
+                    color: Colors.white,
+                    elevation: 0,
+                    child: Row(
+                      children: <Widget>[
+                        CategoryImage(CategoriesCubit.of(context).categories[index].image),
+                        CategoryName(CategoriesCubit.of(context).categories[index].name),
+                        GreyForwardArrow(),
+                      ],
+                    ),
                   ),
                 ),
               );

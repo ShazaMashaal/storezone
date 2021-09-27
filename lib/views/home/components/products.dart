@@ -5,6 +5,10 @@ import '../cubit.dart';
 import '../../favorite/components/favorite_circle_icon.dart';
 
 class Products extends StatelessWidget {
+  final controller;
+
+  const Products( this.controller);
+
   @override
   Widget build(BuildContext context) {
     final controller=HomeCubit.of(context);

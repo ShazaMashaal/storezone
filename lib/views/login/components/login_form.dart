@@ -26,6 +26,7 @@ class LoginForm extends StatelessWidget {
             children: [
               EmailTextField(controller:controller.emailController),
               PasswordTextField(controller: controller.passwordController,),
+              //TODO: Show And Hide Password
               ForgotPasswordText(),
               LoginButton(),
               text(

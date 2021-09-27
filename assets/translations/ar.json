@@ -56,5 +56,12 @@
   },
   "editProfile": {
     "update": "تعديل"
+  },
+  "changePassword": {
+    "newPassword": "كلمة المرور الجديدة",
+    "oldPassword": "كلمة السرالحالية",
+    "confirmNewPassword": "تأكيد كلمة السر الجديدة",
+    "confirmNewPasswordHint": "أعد كتابة كلمة السر الجديدة",
+    "changePassword": "غير كلمة السر"
   }
 }

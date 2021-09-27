@@ -12,6 +12,7 @@ class FavoritesView extends StatelessWidget {
     return ListView.builder(
       scrollDirection: Axis.vertical,
       shrinkWrap: true,
+      itemCount: CategoriesCubit.of(context).categories.length,
       itemBuilder: (context, index) {
         return Container(
           width: MediaQuery.of(context).size.width * 0.94,
@@ -24,7 +25,6 @@ class FavoritesView extends StatelessWidget {
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                //TODO : same blocprovider
                 CategoryImage(CategoriesCubit.of(context).categories[index].image),
                 Expanded(
                   child: Column(

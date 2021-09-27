@@ -51,5 +51,11 @@ abstract class  LocaleKeys {
   static const resetPassword = 'resetPassword';
   static const editProfile_update = 'editProfile.update';
   static const editProfile = 'editProfile';
+  static const changePassword_newPassword = 'changePassword.newPassword';
+  static const changePassword_oldPassword = 'changePassword.oldPassword';
+  static const changePassword_confirmNewPassword = 'changePassword.confirmNewPassword';
+  static const changePassword_confirmNewPasswordHint = 'changePassword.confirmNewPasswordHint';
+  static const changePassword_changePassword = 'changePassword.changePassword';
+  static const changePassword = 'changePassword';
 
 }
