@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:storezone/views/FAQs/view.dart';
 import 'package:storezone/views/bottom_navigation_bar/view.dart';
 import 'package:storezone/views/cart/view.dart';
 import 'package:storezone/views/category_products/view.dart';
@@ -50,6 +51,8 @@ class AppRouter{
         return MaterialPageRoute(builder: (_)=>CategoryProducts(),settings: settings);
       case searchScreen:
         return MaterialPageRoute(builder: (_)=>SearchView());
+      case FAQsScreen:
+        return MaterialPageRoute(builder: (_)=>FAQsView());
 
     }
   }
