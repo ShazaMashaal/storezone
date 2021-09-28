@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:storezone/models/home.dart';
 
 class CircleFavoriteIcon extends StatefulWidget {
   // bool isFavorite = false;
-
+final int index ;
+final controller;
+  const CircleFavoriteIcon(this.index, this.controller);
 
   @override
   _CircleFavoriteIconState createState() => _CircleFavoriteIconState();
@@ -21,6 +24,7 @@ class _CircleFavoriteIconState extends State<CircleFavoriteIcon> {
         onPressed: () {
           setState(() {
             isFavorite = !isFavorite;
+            widget.controller.isFavorite(context,widget.controller.products[widget.index].id);
           });
         },
       );

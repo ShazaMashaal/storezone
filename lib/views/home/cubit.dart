@@ -1,14 +1,17 @@
 import 'dart:async';
-
+import 'dart:convert';
 import 'package:dio/dio.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:storezone/consts/strings.dart';
+import 'package:storezone/core/storage.dart';
 import 'package:storezone/models/home.dart';
 import 'package:storezone/views/home/states.dart';
 
 
 class HomeCubit extends Cubit<HomeStates> {
   HomeCubit() : super(HomeInit());
+
 
   static HomeCubit of(context) => BlocProvider.of(context);
 
@@ -31,5 +34,28 @@ class HomeCubit extends Cubit<HomeStates> {
   }
 
 
+  Future<void> isFavorite(context,productId)async{
+    final response = await Dio().post(baseUrl+'favorite',data: {"product_id":productId},options: Options(
+        followRedirects: false,
+        validateStatus: (status) {
+          return status < 500;
+        },
+      contentType: 'application/json',
+      headers: {
+        'Authorization':AppStorage.getToken}
+    ));
+    final data = response.data.toString();
+
+    // ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+    //     backgroundColor: data['status']
+    //         ? Colors.grey.withOpacity(.4)
+    //         : Colors.red.withOpacity(.4),
+    //     behavior: SnackBarBehavior.floating,
+    //     content: Text(
+    //       data['message'],
+    //       style: TextStyle(fontSize: 20),
+    //     )));
+    // Timer(Duration(seconds: 3),()=>emit(HomeInit()));
+  }
 }
 

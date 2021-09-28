@@ -18,7 +18,9 @@ class ItemImage extends StatelessWidget {
               padding: const EdgeInsets.all(20.0),
               child: Align(
                   alignment: Alignment.bottomLeft,
-                  child: CircleFavoriteIcon()),
+                //TODO:   // child: CircleFavoriteIcon()),
+    child: null),
+
             ))
 
       ],

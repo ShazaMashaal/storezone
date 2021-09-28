@@ -14,7 +14,6 @@ import 'cubit.dart';
 import 'states.dart';
 
 class HomeView extends StatefulWidget {
-
   @override
   _HomeViewState createState() => _HomeViewState();
 
@@ -24,6 +23,7 @@ class HomeView extends StatefulWidget {
 class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
+
     return BlocProvider(
       create: (context)=>HomeCubit()..getData(),
       child: BlocBuilder<HomeCubit, HomeStates>(
@@ -47,7 +47,7 @@ class _HomeViewState extends State<HomeView> {
                         Flexible(
                           child: ListView.builder(
                             scrollDirection: Axis.horizontal,
-                            itemBuilder: (BuildContext context, int index) {
+                            itemBuilder: (BuildContext context,  index) {
                               if (index == 0 && !AppStorage.isLogged) return SignCard();
                               return DiscountCard();
                             },

@@ -61,7 +61,7 @@ class Products extends StatelessWidget {
                                   controller.products[index].price.toString(),
                                   style: TextStyle(fontSize: 18),
                                 ),
-                                CircleFavoriteIcon()
+                                CircleFavoriteIcon(index,controller)
                               ])
                         ],
                       ),
