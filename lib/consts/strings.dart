@@ -13,4 +13,5 @@ const changePasswordScreen='/change_password';
 const editProfileScreen='/edit_profile';
 const fullImageScreen='/full_screen';
 const categoryProductsScreen='/category_products';
+const searchScreen='/search';
 

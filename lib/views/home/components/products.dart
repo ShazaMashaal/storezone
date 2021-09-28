@@ -11,7 +11,6 @@ class Products extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller=HomeCubit.of(context);
     return  GridView.builder(
       shrinkWrap: true,
       // primary: false,

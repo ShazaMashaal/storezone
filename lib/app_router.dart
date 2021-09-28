@@ -11,6 +11,7 @@ import 'package:storezone/views/login/view.dart';
 import 'package:storezone/views/pin_code/view.dart';
 import 'package:storezone/views/register/view.dart';
 import 'package:storezone/views/reset_password/view.dart';
+import 'package:storezone/views/search/view.dart';
 import 'package:storezone/views/splash/view.dart';
 
 import 'consts/strings.dart';
@@ -47,7 +48,8 @@ class AppRouter{
         return MaterialPageRoute(builder: (_)=>ChangePasswordView());
       case categoryProductsScreen:
         return MaterialPageRoute(builder: (_)=>CategoryProducts(),settings: settings);
-
+      case searchScreen:
+        return MaterialPageRoute(builder: (_)=>SearchView());
 
     }
   }

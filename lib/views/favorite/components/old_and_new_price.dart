@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
 class OldAndNewPrice extends StatelessWidget {
+final  double oldPrice;
+final double price;
 
+  const OldAndNewPrice( this.oldPrice, this.price) ;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -11,14 +14,14 @@ class OldAndNewPrice extends StatelessWidget {
 
         children: [
           Text(
-            "11499",
+            oldPrice.toString(),
             style: TextStyle(
               color: Color(0xFFFD9A25),
               fontSize: 18,
             ),
           ),
           Text(
-            "11499",
+            price.toString(),
             style: TextStyle(
                 decoration: TextDecoration.lineThrough,
                 fontSize: 18,color: Colors.grey

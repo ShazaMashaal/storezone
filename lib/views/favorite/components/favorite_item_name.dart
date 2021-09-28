@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 
 class FavoriteItemName extends StatelessWidget {
+  final String name;
+
+  const FavoriteItemName( this.name) ;
+
 
   @override
   Widget build(BuildContext context) {
@@ -9,7 +13,7 @@ class FavoriteItemName extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.fromLTRB(1, 30, 0, 10),
         child: Text(
-          'Apple HeadPhone with Charging Case',
+          name,
           style: TextStyle(
             fontSize: 18,
           ),

@@ -12,7 +12,7 @@ import 'package:storezone/views/pin_code/states.dart';
 class CategoryProductsCubit extends Cubit<CategoryProductsStates> {
   CategoryProductsCubit(this.id) : super(CategoryProductsInit());
 
-  final String id;
+  final int id;
 
   static CategoryProductsCubit of(context) => BlocProvider.of(context);
 
@@ -23,17 +23,20 @@ List<ProductData> products;
     emit(CategoryProductsLoading());
 
     try {
-      final response = await Dio().get(baseUrl + "categories/"+id,
+      final response = await Dio().get(baseUrl + "categories/"+id.toString(),
           options: Options(
               followRedirects: false,
               validateStatus: (status) {
                 return status < 500;
               }));
+
       final data = response.data as Map;
-      CategoryProductsModel categoryProductsModel=CategoryProductsModel.fromJson(data);
+      CategoryProductsModel categoryProducts = CategoryProductsModel.fromJson(data);
       products.clear();
-      products.addAll(categoryProductsModel.data.data);
-      if (!data['status']) {
+      print(categoryProducts.data.data);
+      print(id);
+      products.addAll(categoryProducts.data.data);
+      if (!categoryProducts.status) {
         ScaffoldMessenger.of(context).showSnackBar(SnackBar(
             backgroundColor: Colors.red.withOpacity(.4),
             behavior: SnackBarBehavior.floating,

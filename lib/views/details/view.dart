@@ -20,7 +20,7 @@ class DetailsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: appBar(context),
+      // appBar: appBar(context),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: SingleChildScrollView(
