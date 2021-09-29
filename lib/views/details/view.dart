@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:storezone/components/app_bar.dart';
 import 'package:storezone/components/app_bar_search.dart';
@@ -8,6 +9,7 @@ import 'package:storezone/components/horizontal_rating_bar.dart';
 import 'package:storezone/translations/locale_keys.g.dart';
 import 'package:storezone/views/details/components/item_title.dart';
 import 'package:getwidget/getwidget.dart';
+import 'package:storezone/views/home/cubit.dart';
 import 'package:storezone/widgets/custom_button.dart';
 
 import 'components/delivery_price.dart';
@@ -17,10 +19,14 @@ import 'components/purchase.dart';
 import 'components/quantity.dart';
 
 class DetailsView extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      // appBar: appBar(context),
+    final arguments = ModalRoute.of(context).settings.arguments as Map;
+final index=arguments['index'];
+    return BlocProvider(
+  create: (context) => HomeCubit()..getData(),
+  child: Scaffold(
       body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: SingleChildScrollView(
@@ -31,6 +37,8 @@ class DetailsView extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text("Brand: Brand Name"),
+                  // Text(product.name),
+
                   HorizontalRatingBar(),
                 ],
               ),
@@ -59,6 +67,7 @@ class DetailsView extends StatelessWidget {
           ),
         ),
       ),
-    );
+    ),
+);
   }
 }

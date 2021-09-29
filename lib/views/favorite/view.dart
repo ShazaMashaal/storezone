@@ -30,17 +30,24 @@ class FavoritesView extends StatelessWidget {
                 color: Colors.white,
                 elevation: 0,
                 child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
-                    CategoryImage(FavoritesCubit.of(context).products[index].product.image),
+                    Column(
+                      children: [
+                        CategoryImage(FavoritesCubit.of(context).products[index].product.image),
+                      ],
+                    ),
                     Expanded(
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: <Widget>[
                           FavoriteItemName(FavoritesCubit.of(context).products[index].product.name),
                           Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children: [OldAndNewPrice(FavoritesCubit.of(context).products[index].product.oldPrice,FavoritesCubit.of(context).products[index].product.price), CircleFavoriteIcon(index,FavoritesCubit.of(context))],
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [NewPrice(FavoritesCubit.of(context).products[index].product.price),],
+                          ),
+                          SizedBox(
+                            height: 20,
                           )
                         ],
                       ),

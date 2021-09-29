@@ -14,6 +14,7 @@ class FavoriteItemName extends StatelessWidget {
         padding: const EdgeInsets.fromLTRB(1, 30, 0, 10),
         child: Text(
           name,
+          maxLines: 4,
           style: TextStyle(
             fontSize: 18,
           ),

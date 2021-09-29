@@ -22,7 +22,7 @@ class Products extends StatelessWidget {
       itemCount: controller.products.length,
       itemBuilder: (context, index) {
         return GestureDetector(
-          onTap: (){Navigator.pushNamed(context, detailsScreen);},
+          onTap: (){Navigator.pushNamed(context, detailsScreen,arguments: {'index':index});},
           child: Card(
             child: Padding(
               padding: const EdgeInsets.all(8.0),
@@ -34,9 +34,25 @@ class Products extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Center(
-                        child: Image.network(
-                          controller.products[index].image,
-                          fit: BoxFit.fill,
+                        child: Stack(
+                          children: [
+                            Image.network(
+                              controller.products[index].image,
+                              fit: BoxFit.fill,
+                            ),
+                            controller.products[index].discount==0?Text(""): Positioned(
+                                left: 0,
+                                bottom: 0,
+                                child: Container(
+                                  width: 50,
+                              height: 20,
+                              color: Colors.red,
+                              child: Center(child: Text("%"+controller.products[index].discount.toString(),style: TextStyle(
+                                fontSize: 15,
+                                color: Colors.white
+                              ),)),
+                            ))
+                          ],
                         ),
                       ),
                     ),
@@ -54,15 +70,22 @@ class Products extends StatelessWidget {
                             maxLines: 1,
                           ),
                           Spacer(),
-                          Row(
+                          Column(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Text(
-                                  controller.products[index].price.toString(),
-                                  style: TextStyle(fontSize: 18),
+                                controller.products[index].discount==0?Text(""):  Text(
+                                  "EGP: " +controller.products[index].oldPrice.toString(),
+                                  style: TextStyle(fontSize: 18,decoration: TextDecoration.lineThrough),
                                 ),
-                                CircleFavoriteIcon(index,controller)
-                              ])
+                                Text(
+                                 "EGP: "+ controller.products[index].price.toString(),
+                                  style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),
+                                ),
+
+                              ]),
+                          SizedBox(
+                            height: 20,
+                          )
                         ],
                       ),
                     ),
