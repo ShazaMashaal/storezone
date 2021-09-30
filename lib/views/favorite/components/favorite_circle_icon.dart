@@ -1,19 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:storezone/models/home.dart';
+import 'package:storezone/views/home/cubit.dart';
 
 class CircleFavoriteIcon extends StatefulWidget {
-  // bool isFavorite = false;
-final int index ;
-final controller;
-  const CircleFavoriteIcon(this.index, this.controller);
+  final bool isFavorite;
+  final int id ;
+  const CircleFavoriteIcon(this.id, this.isFavorite);
 
   @override
   _CircleFavoriteIconState createState() => _CircleFavoriteIconState();
 }
-bool isFavorite = false;
-
 
 class _CircleFavoriteIconState extends State<CircleFavoriteIcon> {
+
+  bool isFavorite = false;
+
+  @override
+  void initState(){
+    super.initState();
+    isFavorite = widget.isFavorite;
+  }
+
   @override
   Widget build(BuildContext context) {
     return  IconButton(
@@ -24,7 +30,7 @@ class _CircleFavoriteIconState extends State<CircleFavoriteIcon> {
         onPressed: () {
           setState(() {
             isFavorite = !isFavorite;
-            widget.controller.isFavorite(context,widget.controller.products[widget.index].id);
+            HomeCubit().isFavorite(context, widget.id);
           });
         },
       );

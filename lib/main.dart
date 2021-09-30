@@ -6,6 +6,9 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:storezone/translations/codegen_loader.g.dart';
 import 'package:storezone/views/category/cubit.dart';
+import 'package:storezone/views/category_products/cubit.dart';
+import 'package:storezone/views/category_products/view.dart';
+import 'package:storezone/views/home/cubit.dart';
 
 import 'core/storage.dart';
 
@@ -37,8 +40,19 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    return BlocProvider(
-      create:(context)=>CategoriesCubit()..getCategories(),
+    return MultiBlocProvider(
+
+    providers: [
+    BlocProvider<CategoriesCubit>(
+    create: (BuildContext context) => CategoriesCubit(),
+    ),
+    BlocProvider<HomeCubit>(
+    create: (BuildContext context) => HomeCubit(),
+    ),
+    // BlocProvider<CategoryProductsCubit>(
+    // create: (BuildContext context) => CategoryProductsCubit(),
+    // ),
+    ],
       child: MaterialApp(
         localizationsDelegates: context.localizationDelegates,
         supportedLocales: context.supportedLocales,

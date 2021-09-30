@@ -16,7 +16,7 @@ class CategoryProductsCubit extends Cubit<CategoryProductsStates> {
 
   static CategoryProductsCubit of(context) => BlocProvider.of(context);
 
-List<ProductData> products;
+List<ProductData> products = [];
 
   Future<void> getCategoryProducts(BuildContext context) async {
 
@@ -36,7 +36,7 @@ List<ProductData> products;
       print(categoryProducts.data.data);
       print(id);
       products.addAll(categoryProducts.data.data);
-      if (!categoryProducts.status) {
+      if (categoryProducts.status != null && !categoryProducts.status) {
         ScaffoldMessenger.of(context).showSnackBar(SnackBar(
             backgroundColor: Colors.red.withOpacity(.4),
             behavior: SnackBarBehavior.floating,

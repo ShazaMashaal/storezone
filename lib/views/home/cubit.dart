@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:convert';
+import 'dart:developer';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -21,13 +22,18 @@ class HomeCubit extends Cubit<HomeStates> {
 
   Future<void> getData()async{
     emit(HomeLoading());
-    final response = await Dio().get(baseUrl+'home');
+    final response = await Dio().get(baseUrl+'home', options: Options(headers: {
+      if(AppStorage.isLogged)
+      'Authorization': AppStorage.getToken,
+    }));
+    print(AppStorage.getToken);
     final data = response.data as Map;
     HomeModel home = HomeModel.fromJson(data);
     banners.clear();
     products.clear();
     print(home.data.banners);
     banners.addAll(home.data.banners);
+    log(data.toString());
     products.addAll(home.data.products);
     // Timer(Duration(seconds: 3),()=>emit(HomeInit()));
     emit(HomeInit());

@@ -40,7 +40,7 @@ class FavoritesView extends StatelessWidget {
                           FavoriteItemName(FavoritesCubit.of(context).products[index].product.name),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children: [OldAndNewPrice(FavoritesCubit.of(context).products[index].product.oldPrice,FavoritesCubit.of(context).products[index].product.price), CircleFavoriteIcon(index,FavoritesCubit.of(context))],
+                            children: [OldAndNewPrice(FavoritesCubit.of(context).products[index].product.oldPrice,FavoritesCubit.of(context).products[index].product.price), CircleFavoriteIcon(FavoritesCubit.of(context).products[index].id,true)],
                           )
                         ],
                       ),
