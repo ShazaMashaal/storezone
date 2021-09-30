@@ -38,7 +38,7 @@ class AppRouter{
       case homeScreen:
         return MaterialPageRoute(builder: (_)=>Home());
       case detailsScreen:
-        return MaterialPageRoute(builder: (_)=>DetailsView());
+        return MaterialPageRoute(builder: (_)=>DetailsView(),settings: settings);
       case cartScreen:
         return MaterialPageRoute(builder: (_)=>CartView());
       case editProfileScreen:

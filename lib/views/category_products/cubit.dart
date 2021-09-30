@@ -8,7 +8,6 @@ import 'package:storezone/views/category_products/view.dart';
 import 'package:storezone/views/login/states.dart';
 import 'package:storezone/views/pin_code/states.dart';
 
-
 class CategoryProductsCubit extends Cubit<CategoryProductsStates> {
   CategoryProductsCubit(this.id) : super(CategoryProductsInit());
 
@@ -16,14 +15,13 @@ class CategoryProductsCubit extends Cubit<CategoryProductsStates> {
 
   static CategoryProductsCubit of(context) => BlocProvider.of(context);
 
-List<ProductData> products = [];
+List<ProductData> products;
 
   Future<void> getCategoryProducts(BuildContext context) async {
-
     emit(CategoryProductsLoading());
 
     try {
-      final response = await Dio().get(baseUrl + "categories/"+id.toString(),
+      final response = await Dio().get(baseUrl + "categories/" + id.toString(),
           options: Options(
               followRedirects: false,
               validateStatus: (status) {
@@ -31,7 +29,8 @@ List<ProductData> products = [];
               }));
 
       final data = response.data as Map;
-      CategoryProductsModel categoryProducts = CategoryProductsModel.fromJson(data);
+      CategoryProductsModel categoryProducts =
+          CategoryProductsModel.fromJson(data);
       products.clear();
       print(categoryProducts.data.data);
       print(id);
@@ -40,7 +39,10 @@ List<ProductData> products = [];
         ScaffoldMessenger.of(context).showSnackBar(SnackBar(
             backgroundColor: Colors.red.withOpacity(.4),
             behavior: SnackBarBehavior.floating,
-            content: Text(data['message'],style: TextStyle(fontSize: 20),)));
+            content: Text(
+              data['message'],
+              style: TextStyle(fontSize: 20),
+            )));
       }
     } catch (e, s) {
       print(s);
