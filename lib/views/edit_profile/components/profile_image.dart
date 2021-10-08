@@ -14,7 +14,6 @@ final  BoxConstraints constraints;
     return BlocBuilder(
       bloc: controller,
       builder:(context,state)=> GestureDetector(
-        //TODO : navigating to fill screen image doesn't work
         onTap: ()=>Navigator.pushNamed(context,fullImageScreen),
         child: Container(
           // child: Icon(

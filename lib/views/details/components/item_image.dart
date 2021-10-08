@@ -1,27 +1,62 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:storezone/views/favorite/components/favorite_circle_icon.dart';
 
+import '../product_details_cubit.dart';
+
 class ItemImage extends StatelessWidget {
 
+
+  const ItemImage() ;
   @override
   Widget build(BuildContext context) {
+    final productDetails=ProductDetailsCubit.of(context).productDetails.data;
     return Stack(
       children: [
-        Image.network("https://m.media-amazon.com/images/I/41ROIcZjRhL._AC_.jpg"),
-        Positioned.fill( child: Align(
-            alignment: Alignment.topRight,
+        CarouselSlider(
+          options: CarouselOptions(
+            aspectRatio: 1.0,
+            enlargeCenterPage: true,
+            scrollDirection: Axis.horizontal,
+            autoPlay: false,
+          ),
+          items: productDetails.images.map((e) => Container(child: Center(child: FadeInImage(
+              placeholder: AssetImage("assets/images/placeholder.gif"),
+              imageErrorBuilder:    (BuildContext context, Object exception, StackTrace stackTrace) {
+                return  Image.asset("assets/images/placeholder.gif");
+              },
+              image: NetworkImage(e)),),)).toList(),
+        ),
+        productDetails.discount==0?Text(""):Positioned(
+            left: 10,
+            top: 10,
+            child:CircleAvatar(
+              radius: 27,
+              backgroundColor: Color(0xFFAF1D13),
+              child: Center(child: Text(productDetails.discount.toString()+"% \n off",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),)),
+            )
+        ),
 
-            child: Icon(Icons.share_outlined,size: 30,color: Colors.grey[600],))),
-        Positioned.fill(
-
-            child: Padding(
-              padding: const EdgeInsets.all(20.0),
-              child: Align(
-                  alignment: Alignment.bottomLeft,
-                //TODO:   // child: CircleFavoriteIcon()),
-    child: null),
-
-            ))
+        Positioned(
+            right: 10,
+            top: 10,
+            child:MaterialButton(
+              elevation: 0,
+              onPressed: () {},
+              color: Colors.white70,
+              child: Icon(
+                Icons.share_outlined,
+                size: 30,
+                color: Colors.grey,
+              ),
+              padding: EdgeInsets.all(5),
+              shape: CircleBorder(),
+            )
+        ),
+        Positioned(
+            left: 10,
+            bottom: 10,
+            child: CircleFavoriteIcon(productDetails.id,productDetails.inFavorites))
 
       ],
     );

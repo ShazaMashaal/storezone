@@ -4,9 +4,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:storezone/consts/strings.dart';
 import 'package:storezone/views/category_products/category_products_model.dart';
 import 'package:storezone/views/category_products/states.dart';
-import 'package:storezone/views/category_products/view.dart';
-import 'package:storezone/views/login/states.dart';
-import 'package:storezone/views/pin_code/states.dart';
 
 class CategoryProductsCubit extends Cubit<CategoryProductsStates> {
   CategoryProductsCubit(this.id) : super(CategoryProductsInit());
@@ -15,7 +12,7 @@ class CategoryProductsCubit extends Cubit<CategoryProductsStates> {
 
   static CategoryProductsCubit of(context) => BlocProvider.of(context);
 
-  List<ProductData> products;
+  List<ProductData> products=[];
 
   Future<void> getCategoryProducts(BuildContext context) async {
     emit(CategoryProductsLoading());
@@ -30,12 +27,12 @@ class CategoryProductsCubit extends Cubit<CategoryProductsStates> {
 
       final data = response.data as Map;
       CategoryProductsModel categoryProducts =
-          CategoryProductsModel.fromJson(data);
+      CategoryProductsModel.fromJson(data);
       products.clear();
       print(categoryProducts.data.data);
       print(id);
       products.addAll(categoryProducts.data.data);
-      if (!categoryProducts.status) {
+      if (categoryProducts.status != null && !categoryProducts.status) {
         ScaffoldMessenger.of(context).showSnackBar(SnackBar(
             backgroundColor: Colors.red.withOpacity(.4),
             behavior: SnackBarBehavior.floating,
@@ -49,5 +46,8 @@ class CategoryProductsCubit extends Cubit<CategoryProductsStates> {
       print(e);
     }
     emit(CategoryProductsInit());
+
   }
+
+
 }

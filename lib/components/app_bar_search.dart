@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:storezone/consts/strings.dart';
-import 'package:storezone/views/search/cubit.dart';
 
 class AppBarSearch extends StatelessWidget {
+  TextEditingController searchController=TextEditingController();
   @override
   Widget build(BuildContext context) {
-
     return TextField(
+      controller: searchController,
       cursorColor: Colors.black,
       style: TextStyle(fontSize: 17),
       decoration: InputDecoration(
@@ -23,7 +23,11 @@ class AppBarSearch extends StatelessWidget {
           prefixIcon: IconButton(
             icon: Icon(Icons.search),
             color: Colors.black,
-            onPressed: () => Navigator.pushNamed(context, searchScreen),
+            onPressed: () {
+              Navigator.pushNamed(context, searchScreen,arguments: {'text':searchController.text});
+
+
+            },
           )),
     );
   }

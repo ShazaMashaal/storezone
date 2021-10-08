@@ -42,6 +42,7 @@ dependencies:
   image_cropper: ^1.4.1
   pin_code_text_field: ^1.8.0
   get_storage: ^2.0.3
+  dots_indicator: ^2.0.0
 
 dev_dependencies:
   flutter_test:

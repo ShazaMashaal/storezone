@@ -63,7 +63,7 @@ class _HomeViewState extends State<HomeView> {
               HomeTitles(title: "Categories"),
               CategoriesList(),
               HomeTitles(title: "Products"),
-              Products(HomeCubit.of(context))
+              Products(HomeCubit.of(context).products)
             ],
           ),
         ),

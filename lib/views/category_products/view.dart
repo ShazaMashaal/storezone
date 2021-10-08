@@ -14,18 +14,19 @@ class CategoryProducts extends StatelessWidget {
     final arguments = ModalRoute.of(context).settings.arguments as Map;
 
     return BlocProvider(
-        create: (context) => CategoryProductsCubit(arguments['id'])..getCategoryProducts(context),
-        child:  BlocBuilder<CategoryProductsCubit,CategoryProductsStates>(
+      create: (context) => CategoryProductsCubit(arguments['id'])..getCategoryProducts(context),
+      child:  BlocBuilder<CategoryProductsCubit,CategoryProductsStates>(
 
-          builder:(context,state)=> state is CategoryProductsLoading?Center(child: CircularProgressIndicator()) :SingleChildScrollView(
-              child:  Column(
-                children: [
-                  Products(CategoryProductsCubit.of(context))
-
-                ],
-              ),
+        builder:(context,state)=> state is CategoryProductsLoading?Center(child: CircularProgressIndicator()) :Scaffold(
+          body: SingleChildScrollView(
+            child:  Column(
+              children: [
+                Products(CategoryProductsCubit.of(context).products)
+              ],
             ),
+          ),
         ),
-        );
+      ),
+    );
   }
 }

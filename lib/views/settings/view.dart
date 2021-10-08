@@ -24,6 +24,8 @@ class SettingsView extends StatelessWidget {
             SettingsItem(
               title: LocaleKeys.settings_notifications.tr(),
               icon: Icons.notifications,
+              function: ()=>Navigator.pushNamed(context, notificationsScreen),
+
             ),
             SettingsItem(
               title: LocaleKeys.settings_changePassword.tr(),

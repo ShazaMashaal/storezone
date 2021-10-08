@@ -7,7 +7,6 @@ import '../cubit.dart';
 class CategoryImage extends StatelessWidget {
 final String image;
 CategoryImage(this.image);
-//TODO: Try Shimmer
   @override
   Widget build(BuildContext context) {
     return   Padding(
@@ -17,21 +16,15 @@ CategoryImage(this.image);
             maxWidth: MediaQuery.of(context).size.width * 0.3,
             maxHeight: MediaQuery.of(context).size.width * 0.3,
           ),
-          child: FadeInImage( //TODO: this
+          child: FadeInImage(
             placeholder: AssetImage("assets/images/placeholder.gif"),
             imageErrorBuilder:    (BuildContext context, Object exception, StackTrace stackTrace) {
             return  Image.asset("assets/images/placeholder.gif");
           },
-            //TODO:ابعت ال image من برة
             image: NetworkImage(image),
           ),
           //TODO: connectivity check internet ..... and refresh screen
-//TODO: what is the difference between the two fadeInImage
-          // child: FadeInImage.assetNetwork( //TODO: and This
-          //     placeholder: 'assets/images/placeholder.gif',
-          //     image: controller.categories[index].image,
-          //   imageErrorBuilder: ,
-          // ),
+
         ),
     );
   }

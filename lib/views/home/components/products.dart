@@ -5,9 +5,11 @@ import '../cubit.dart';
 import '../../favorite/components/favorite_circle_icon.dart';
 
 class Products extends StatelessWidget {
-  final controller;
 
-  const Products( this.controller);
+  final dynamic products;
+
+  Products( this.products)
+      : assert(products != null && (products is List), "Products != null && Products is List");
 
   @override
   Widget build(BuildContext context) {
@@ -19,10 +21,10 @@ class Products extends StatelessWidget {
         crossAxisCount: 2
       ),
       physics: NeverScrollableScrollPhysics(),
-      itemCount: controller.products.length,
+      itemCount: products.length,
       itemBuilder: (context, index) {
         return GestureDetector(
-          onTap: (){Navigator.pushNamed(context, detailsScreen,arguments: {'index':index});},
+          onTap: (){Navigator.pushNamed(context, detailsScreen,arguments: {'id':products[index].id});},
           child: Card(
             child: Padding(
               padding: const EdgeInsets.all(8.0),
@@ -36,18 +38,22 @@ class Products extends StatelessWidget {
                       child: Center(
                         child: Stack(
                           children: [
-                            Image.network(
-                              controller.products[index].image,
-                              fit: BoxFit.fill,
+                            FadeInImage(
+                              placeholder: AssetImage("assets/images/placeholder.gif"),
+                              imageErrorBuilder:    (BuildContext context, Object exception, StackTrace stackTrace) {
+                                return  Image.asset("assets/images/placeholder.gif");
+                              },
+                              image: NetworkImage( products[index].image),
                             ),
-                            controller.products[index].discount==0?Text(""): Positioned(
+
+                            products[index].discount==0?Text(""): Positioned(
                                 left: 0,
                                 bottom: 0,
                                 child: Container(
                                   width: 50,
                               height: 20,
                               color: Colors.red,
-                              child: Center(child: Text("%"+controller.products[index].discount.toString(),style: TextStyle(
+                              child: Center(child: Text("%"+products[index].discount.toString(),style: TextStyle(
                                 fontSize: 15,
                                 color: Colors.white
                               ),)),
@@ -65,7 +71,7 @@ class Products extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           Text(
-                            controller.products[index].name,
+                            products[index].name,
                             style: TextStyle(fontSize: 15),
                             maxLines: 1,
                           ),
@@ -73,12 +79,12 @@ class Products extends StatelessWidget {
                           Column(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                controller.products[index].discount==0?Text(""):  Text(
-                                  "EGP: " +controller.products[index].oldPrice.toString(),
+                                products[index].discount==0?Text(""):  Text(
+                                  "EGP: " +products[index].oldPrice.toString(),
                                   style: TextStyle(fontSize: 18,decoration: TextDecoration.lineThrough),
                                 ),
                                 Text(
-                                 "EGP: "+ controller.products[index].price.toString(),
+                                 "EGP: "+ products[index].price.toString(),
                                   style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),
                                 ),
 

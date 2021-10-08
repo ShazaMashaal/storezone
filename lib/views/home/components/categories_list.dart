@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:storezone/consts/strings.dart';
 import 'package:storezone/views/category/cubit.dart';
 
 import '../cubit.dart';
@@ -20,31 +21,34 @@ class CategoriesList extends StatelessWidget {
           itemCount: controller.categories.length,
           scrollDirection: Axis.horizontal,
           itemBuilder: (BuildContext context, int index) {
-            return  Container(
-                padding: EdgeInsets.only(left: 40),
-            width: MediaQuery.of(context).size.width/2.5,
-                child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children:[
+            return  GestureDetector(
+              onTap: ()=>Navigator.pushNamed(context, categoryProductsScreen,arguments:{'id':CategoriesCubit.of(context).categories[index].id}),
+              child: Container(
+                  padding: EdgeInsets.only(left: 40),
+              width: MediaQuery.of(context).size.width/2.5,
+                  child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children:[
 
-                 Expanded(
-                   flex:5,
-                   // child: Padding(
-                   //   padding: const EdgeInsets.all(8.0),
-                   //   child: Image.network(controller.categories[index].image, fit: BoxFit.fill,),
-                   // ),
-                   child : FadeInImage( //TODO: this
-                     placeholder: AssetImage("assets/images/placeholder.gif"),
-                     imageErrorBuilder:    (BuildContext context, Object exception, StackTrace stackTrace) {
-                       return  Image.asset("assets/images/placeholder.gif");
-                     },
-                     image: NetworkImage(controller.categories[index].image),
+                   Expanded(
+                     flex:5,
+                     // child: Padding(
+                     //   padding: const EdgeInsets.all(8.0),
+                     //   child: Image.network(controller.categories[index].image, fit: BoxFit.fill,),
+                     // ),
+                     child : FadeInImage(
+                       placeholder: AssetImage("assets/images/placeholder.gif"),
+                       imageErrorBuilder:    (BuildContext context, Object exception, StackTrace stackTrace) {
+                         return  Image.asset("assets/images/placeholder.gif");
+                       },
+                       image: NetworkImage(controller.categories[index].image),
+                     ),
                    ),
-                 ),
-                Expanded(
-                    flex:2,
-                    child: Text(controller.categories[index].name,))
-              ])
+                  Expanded(
+                      flex:2,
+                      child: Text(controller.categories[index].name,))
+                ])
+              ),
             );
           },
         ),

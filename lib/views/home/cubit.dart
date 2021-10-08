@@ -34,26 +34,6 @@ class HomeCubit extends Cubit<HomeStates> {
   }
 
 
-  Future<void> isFavorite(context,int productId)async{
-    final response = await Dio().post(baseUrl+'favorites',data: {"product_id":productId},options: Options(
-        followRedirects: false,
-        validateStatus: (status) {
-          return status < 500;
-        },
-      contentType: 'application/json',
-      headers: {
-        'Authorization':AppStorage.getToken}
-    ));
-    final data = response.data;
-    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-        backgroundColor: data['status']
-            ? Colors.grey.withOpacity(.4)
-            : Colors.red.withOpacity(.4),
-        behavior: SnackBarBehavior.floating,
-        content: Text(
-          data['message'],
-          style: TextStyle(fontSize: 20),
-        )));
-  }
+
 }
 
