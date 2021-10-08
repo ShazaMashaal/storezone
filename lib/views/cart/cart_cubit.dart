@@ -34,4 +34,31 @@ class CartCubit extends Cubit<CartState> {
     emit(CartInit());
   }
 
+  Future<void> deleteFromCart(int cartItemId,context)async{
+    final response = await Dio().delete(baseUrl+'carts/'+cartItemId.toString(),options: Options(
+        headers: {'Authorization' : AppStorage.getToken}
+    ));
+
+    final data = response.data as Map;
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+        backgroundColor: Colors.red.withOpacity(.4),
+        behavior: SnackBarBehavior.floating,
+        content: Text(
+          data['message'],
+          style: TextStyle(fontSize: 20),
+        )));
+
+  }
+
+  Future<void> changeQuantity(int cartItemId,int quantity)async{
+     await Dio().put(baseUrl+'carts/'+cartItemId.toString(),data: {'quantity':quantity},options: Options(
+        headers: {'Authorization' : AppStorage.getToken}
+    ));
+
+  print(cartItemId.toString());
+     print(quantity.toString());
+
+  }
+
+
 }

@@ -32,10 +32,6 @@ class CategoriesList extends StatelessWidget {
 
                    Expanded(
                      flex:5,
-                     // child: Padding(
-                     //   padding: const EdgeInsets.all(8.0),
-                     //   child: Image.network(controller.categories[index].image, fit: BoxFit.fill,),
-                     // ),
                      child : FadeInImage(
                        placeholder: AssetImage("assets/images/placeholder.gif"),
                        imageErrorBuilder:    (BuildContext context, Object exception, StackTrace stackTrace) {

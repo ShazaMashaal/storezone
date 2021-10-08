@@ -2,11 +2,14 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:storezone/consts/strings.dart';
 import 'package:storezone/views/cart/cart_cubit.dart';
 import 'package:storezone/views/category/components/category_image.dart';
 import 'package:storezone/views/favorite/components/favorite_item_name.dart';
 import 'package:storezone/views/favorite/components/old_and_new_price.dart';
 import 'package:storezone/widgets/custom_button.dart';
+
+import 'components/cart_item.dart';
 
 class CartView extends StatelessWidget {
   @override
@@ -39,42 +42,7 @@ class CartView extends StatelessWidget {
                               physics: NeverScrollableScrollPhysics(),
                               shrinkWrap: true,
                               itemCount: CartCubit.of(context).cartItems.length,
-                              itemBuilder: (context, index) =>
-                                  Card(
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(0.0),
-                                    ),
-                                    color: Colors.white,
-                                    elevation: 0,
-                                    child: Row(
-                                      crossAxisAlignment: CrossAxisAlignment.center,
-                                      children: <Widget>[
-                                        Column(
-                                          children: [
-                                            CategoryImage(CartCubit.of(context).cartItems[index].product.image),
-                                          ],
-                                        ),
-                                        Expanded(
-                                          child: Column(
-                                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                                            children: <Widget>[
-                                              FavoriteItemName(CartCubit.of(context).cartItems[index].product.name),
-                                              Row(
-                                                mainAxisAlignment: MainAxisAlignment.center,
-                                                children: [NewPrice(CartCubit.of(context).cartItems[index].product.price+0.0),],
-                                              ),
-                                              SizedBox(
-                                                height: 20,
-                                              )
-                                            ],
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  )
-
-
-                          )
+                              itemBuilder: (context, index) => CartItem(CartCubit.of(context).cartItems[index]))
                         ],
                       ),
                     ),

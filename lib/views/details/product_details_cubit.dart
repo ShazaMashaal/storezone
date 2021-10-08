@@ -42,6 +42,7 @@ class ProductDetailsCubit extends Cubit<ProductDetailsState> {
           'Authorization':AppStorage.getToken}
     ));
     final data = response.data;
+    print(productId);
     //TODO: delay in displaying and hiding
     ScaffoldMessenger.of(context).hideCurrentSnackBar();
     ScaffoldMessenger.of(context).showSnackBar(SnackBar(

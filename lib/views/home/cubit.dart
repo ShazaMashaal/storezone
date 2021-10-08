@@ -31,9 +31,7 @@ class HomeCubit extends Cubit<HomeStates> {
     HomeModel home = HomeModel.fromJson(data);
     banners.clear();
     products.clear();
-    print(home.data.banners);
     banners.addAll(home.data.banners);
-    log(data.toString());
     products.addAll(home.data.products);
     // Timer(Duration(seconds: 3),()=>emit(HomeInit()));
     emit(HomeInit());
