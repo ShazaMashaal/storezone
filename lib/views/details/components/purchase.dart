@@ -14,6 +14,7 @@ class Purchase extends StatefulWidget {
 
 class _PurchaseState extends State<Purchase> {
   bool inCart = false;
+  bool isLoading = false;
 
   @override
   void initState() {
@@ -32,16 +33,18 @@ class _PurchaseState extends State<Purchase> {
           height: 18,
           function: () {},
         ),
-        CustomButton(
+        isLoading ? CircularProgressIndicator() : CustomButton(
           color: Color(0xFFFFD814),
           text: inCart ? "Remove from cart" : "Add to cart",
           height: 18,
-          //TODO: Make the button load after clicking
-          function: () {
-            setState(() {});
+          function: () async {
+            isLoading = true;
             inCart = !inCart;
-            ProductDetailsCubit(widget.id)
+            setState(() {});
+            await ProductDetailsCubit(widget.id)
                 .addAndDeleteCartItems(context, widget.id);
+            isLoading = false;
+            setState(() {});
           },
         )
       ],

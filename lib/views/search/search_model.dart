@@ -116,7 +116,7 @@ class SearchResult {
     inCart = json['in_cart'];
   }
   int id;
-  int price;
+  double price;
   String image;
   String name;
   String description;

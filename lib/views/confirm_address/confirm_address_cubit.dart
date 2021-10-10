@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:dio/dio.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:meta/meta.dart';
 import 'package:storezone/consts/strings.dart';
@@ -38,6 +39,33 @@ class ConfirmAddressCubit extends Cubit<ConfirmAddressState> {
       print(e);
     }
     emit(ConfirmAddressInit());
+  }
+
+
+  Future<void> deleteAddress(context,int addressId)async{
+    try {
+      addresses.removeWhere((element) => element.id == addressId);
+      emit(ConfirmAddressInit());
+      final response = await Dio().delete(baseUrl + "addresses/"+addressId.toString(),
+          options: Options(
+              headers: {'Authorization':AppStorage.getToken},
+              followRedirects: false,
+              validateStatus: (status) {
+                return status < 500;
+              }));
+      final data = response.data as Map;
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+          backgroundColor:  Colors.grey.withOpacity(.4),
+
+          behavior: SnackBarBehavior.floating,
+          content: Text(
+            data['message'],
+            style: TextStyle(fontSize: 20),
+          )));
+    } catch (e, s) {
+      print(s);
+      print(e);
+    }
   }
 
 }

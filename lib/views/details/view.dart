@@ -62,7 +62,9 @@ class DetailsView extends StatelessWidget {
                                 .id),
                         //TODO : separate description and display each feature in a single line
                         Text(
-                          "Description",
+                          ProductDetailsCubit.of(context)
+                              .productDetails
+                              .data.description,
                           style: TextStyle(fontWeight: FontWeight.bold),
                         ),
                         ListView.builder(

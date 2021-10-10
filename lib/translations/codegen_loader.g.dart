@@ -79,6 +79,9 @@ class CodegenLoader extends AssetLoader{
     "confirmNewPassword": "تأكيد كلمة السر الجديدة",
     "confirmNewPasswordHint": "أعد كتابة كلمة السر الجديدة",
     "changePassword": "غير كلمة السر"
+  },
+  "newAddress": {
+    "title": "أضف عنوان جديد"
   }
 };
 static const Map<String,dynamic> en = {
@@ -146,6 +149,9 @@ static const Map<String,dynamic> en = {
     "confirmNewPassword": "Confirm New Password",
     "confirmNewPasswordHint": "Re-Enter New Password",
     "changePassword": "Change Your Password"
+  },
+  "newAddress": {
+    "title": "Add a new address"
   }
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"ar": ar, "en": en};

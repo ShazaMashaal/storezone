@@ -51,13 +51,12 @@ class CartCubit extends Cubit<CartState> {
   }
 
   Future<void> changeQuantity(int cartItemId,int quantity)async{
-     await Dio().put(baseUrl+'carts/'+cartItemId.toString(),data: {'quantity':quantity},options: Options(
+     final response = await Dio().put(baseUrl+'carts/'+cartItemId.toString(),data: {'quantity':quantity},options: Options(
         headers: {'Authorization' : AppStorage.getToken}
     ));
-
-  print(cartItemId.toString());
-     print(quantity.toString());
-
+     print(response.data);
+     subTotal = response.data['data']['total'];
+     emit(CartInit());
   }
 
 

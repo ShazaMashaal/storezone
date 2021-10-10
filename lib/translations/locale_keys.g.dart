@@ -57,6 +57,7 @@ abstract class  LocaleKeys {
   static const changePassword_confirmNewPasswordHint = 'changePassword.confirmNewPasswordHint';
   static const changePassword_changePassword = 'changePassword.changePassword';
   static const changePassword = 'changePassword';
-
+  static const newAddress_title = 'newAddress.title';
+  static const newAddress = 'newAddress';
 
 }

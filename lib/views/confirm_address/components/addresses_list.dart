@@ -3,12 +3,15 @@ import 'package:flutter/widgets.dart';
 import 'package:storezone/views/new_address/addresses_model.dart';
 import 'package:storezone/widgets/custom_button.dart';
 
+import '../confirm_address_cubit.dart';
+
 class AddressCard extends StatelessWidget {
 final AddressData address;
 
   const AddressCard(this.address);
   @override
   Widget build(BuildContext context) {
+    final controller=ConfirmAddressCubit.of(context);
     return Card(
       margin: EdgeInsets.all(5),
      child: Padding(
@@ -36,6 +39,7 @@ final AddressData address;
                   OutlinedButton(onPressed: (){}, child: Text("Edit",style: TextStyle(color: Colors.black),)),
                   OutlinedButton(onPressed: (){
 
+                    controller.deleteAddress(context, address.id);
                   }, child: Text("Delete",style: TextStyle(color: Colors.black))),
                 ],
               ),

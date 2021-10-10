@@ -41,7 +41,7 @@ class _QuantityState extends State<Quantity> {
             if (quantity == 1)
               CartCubit.of(context).deleteFromCart(widget.cartItemId, context);
             else
-              quantity -= quantity;
+              quantity --;
             CartCubit.of(context).changeQuantity(widget.cartItemId, quantity);
           });
         }),
@@ -52,7 +52,7 @@ class _QuantityState extends State<Quantity> {
               color: Colors.black,
             ), () {
           setState(() {
-            quantity += quantity;
+            quantity ++;
 
             CartCubit.of(context).changeQuantity(widget.cartItemId, quantity);
           });
