@@ -14,8 +14,12 @@ const editProfileScreen='/edit_profile';
 const fullImageScreen='/full_screen';
 const categoryProductsScreen='/category_products';
 const searchScreen='/search';
-const FAQsScreen='FAQs';
-const notificationsScreen='notifications';
+const FAQsScreen='/FAQs';
+const notificationsScreen='/notifications';
+const newAddressScreen='/new_address';
+const confirmAddressScreen='/confirm_address';
+
+
 
 
 

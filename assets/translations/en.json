@@ -63,5 +63,8 @@
     "confirmNewPassword": "Confirm New Password",
     "confirmNewPasswordHint": "Re-Enter New Password",
     "changePassword": "Change Your Password"
+  },
+  "newAddress": {
+    "title": "Add a new address"
   }
 }

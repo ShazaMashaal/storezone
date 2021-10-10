@@ -63,5 +63,8 @@
     "confirmNewPassword": "تأكيد كلمة السر الجديدة",
     "confirmNewPasswordHint": "أعد كتابة كلمة السر الجديدة",
     "changePassword": "غير كلمة السر"
+  },
+  "newAddress": {
+    "title": "أضف عنوان جديد"
   }
 }

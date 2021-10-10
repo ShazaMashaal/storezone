@@ -7,13 +7,14 @@ class Quantity extends StatefulWidget {
   final int quantity;
   final int cartItemId;
 
-  const Quantity( this.cartItemId, this.quantity) ;
+  const Quantity(this.cartItemId, this.quantity);
+
   @override
   _QuantityState createState() => _QuantityState();
 }
 
 class _QuantityState extends State<Quantity> {
-  int quantity ;
+  int quantity=1;
 
   @override
   void initState() {
@@ -26,24 +27,35 @@ class _QuantityState extends State<Quantity> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
-
-        CircleButton(widget.quantity==1?Icon(Icons.delete,color: Colors.black,):Text("-",style: TextStyle(color: Colors.black,fontSize: 40),),
-            (){
-              setState(() {
-                quantity +=quantity;
-                CartCubit().changeQuantity(widget.cartItemId,quantity);
-              });
-
-            }),
-        Text(widget.quantity.toString()),
-        CircleButton( Icon(Icons.add,color: Colors.black,
-        ),
-            (){
+        CircleButton(
+            quantity == 1
+                ? Icon(
+                    Icons.delete,
+                    color: Colors.black,
+                  )
+                : Text(
+                    "-",
+                    style: TextStyle(color: Colors.black, fontSize: 40),
+                  ), () {
           setState(() {
-            quantity -=quantity;
-            CartCubit().changeQuantity(widget.cartItemId,quantity);
+            if (quantity == 1)
+              CartCubit.of(context).deleteFromCart(widget.cartItemId, context);
+            else
+              quantity -= quantity;
+            CartCubit.of(context).changeQuantity(widget.cartItemId, quantity);
           });
+        }),
+        Text(quantity.toString()),
+        CircleButton(
+            Icon(
+              Icons.add,
+              color: Colors.black,
+            ), () {
+          setState(() {
+            quantity += quantity;
 
+            CartCubit.of(context).changeQuantity(widget.cartItemId, quantity);
+          });
         })
       ],
     );

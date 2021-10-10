@@ -58,4 +58,5 @@ abstract class  LocaleKeys {
   static const changePassword_changePassword = 'changePassword.changePassword';
   static const changePassword = 'changePassword';
 
+
 }

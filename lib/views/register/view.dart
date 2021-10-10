@@ -9,7 +9,6 @@ import 'package:storezone/widgets/langAppBar.dart';
 import 'components/register_form.dart';
 
 class RegisterView extends StatelessWidget {
-  final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {

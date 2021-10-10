@@ -10,7 +10,7 @@ final Function function;
     return CircleAvatar(
       radius: 20,
       child: FloatingActionButton(
-
+          heroTag: null,
           child: child,
           backgroundColor: Colors.white,
           onPressed: function),

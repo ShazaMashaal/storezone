@@ -4,11 +4,13 @@ import 'package:storezone/views/bottom_navigation_bar/view.dart';
 import 'package:storezone/views/cart/view.dart';
 import 'package:storezone/views/category_products/view.dart';
 import 'package:storezone/views/change_password/view.dart';
+import 'package:storezone/views/confirm_address/view.dart';
 import 'package:storezone/views/details/view.dart';
 import 'package:storezone/views/edit_profile/components/full_screen_image.dart';
 import 'package:storezone/views/edit_profile/view.dart';
 import 'package:storezone/views/forgot_password/view.dart';
 import 'package:storezone/views/login/view.dart';
+import 'package:storezone/views/new_address/view.dart';
 import 'package:storezone/views/notifications/view.dart';
 import 'package:storezone/views/pin_code/view.dart';
 import 'package:storezone/views/register/view.dart';
@@ -55,6 +57,10 @@ class AppRouter{
         return MaterialPageRoute(builder: (_)=>FAQsView());
       case notificationsScreen:
         return MaterialPageRoute(builder: (_)=>NotificationsView());
+      case newAddressScreen:
+        return MaterialPageRoute(builder: (_)=>NewAddressView());
+      case confirmAddressScreen:
+        return MaterialPageRoute(builder: (_)=>ConfirmAddressView());
 
 
     }
