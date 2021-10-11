@@ -11,6 +11,7 @@ import 'components/old_and_new_price.dart';
 class FavoritesView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    //TODO: update favorite list after deleting item from favorites
     return BlocProvider(
       create: (context)=>FavoritesCubit()..getFavorites(),
       child: BlocBuilder<FavoritesCubit,FavoritesStates>(
@@ -43,13 +44,14 @@ class FavoritesView extends StatelessWidget {
                           CategoryImage(FavoritesCubit.of(context).products[index].product.image),
                         ],
                       ),
+                      SizedBox(width: 20,),
                       Expanded(
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
                             FavoriteItemName(FavoritesCubit.of(context).products[index].product.name),
                             Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
                               children: [NewPrice(FavoritesCubit.of(context).products[index].product.price),],
                             ),
                             SizedBox(

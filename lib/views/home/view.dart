@@ -16,57 +16,58 @@ import 'states.dart';
 class HomeView extends StatefulWidget {
   @override
   _HomeViewState createState() => _HomeViewState();
-
 }
-
 
 class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
-
     return BlocProvider(
-      create: (context)=>HomeCubit()..getData(),
+      create: (context) => HomeCubit()..getData(),
       child: BlocBuilder<HomeCubit, HomeStates>(
-        builder: (context, state) => state is HomeLoading&&  state is CategoriesLoading?Center(child: CircularProgressIndicator()):  SingleChildScrollView(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: <Widget>[
-              Stack(
-                children: [
-                  Column(children: [
-                    HomeBanner(),
-                    HomeListViewBackGround(),
-                  ]),
-                  Positioned(
-                    top: MediaQuery.of(context).size.height / 3.8,
-                    left: 0.0,
-                    right: 0.0,
-                    bottom: 5.0,
-                    child: Row(
+        builder: (context, state) => state is HomeLoading &&
+                state is CategoriesLoading
+            ? Center(child: CircularProgressIndicator())
+            : SingleChildScrollView(
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: <Widget>[
+                    Stack(
                       children: [
-                        Flexible(
-                          child: ListView.builder(
-                            scrollDirection: Axis.horizontal,
-                            itemBuilder: (BuildContext context,  index) {
-                              if (index == 0 && !AppStorage.isLogged) return SignCard();
-                              return DiscountCard();
-                            },
+                        Column(children: [
+                          HomeBanner(),
+                          HomeListViewBackGround(),
+                        ]),
+                        Positioned(
+                          top: MediaQuery.of(context).size.height / 3.8,
+                          left: 0.0,
+                          right: 0.0,
+                          bottom: 5.0,
+                          child: Row(
+                            children: [
+                              Flexible(
+                                child: ListView.builder(
+                                  scrollDirection: Axis.horizontal,
+                                  itemBuilder: (BuildContext context, index) {
+                                    if (index == 0 && !AppStorage.isLogged)
+                                      return SignCard();
+                                    return DiscountCard();
+                                  },
+                                ),
+                              ),
+                            ],
                           ),
-                        ),
+                        )
                       ],
                     ),
-                  )
-                ],
-              ),
-              // Button(),
+                    // Button(),
 
-              HomeTitles(title: "Categories"),
-              CategoriesList(),
-              HomeTitles(title: "Products"),
-              Products(HomeCubit.of(context).products)
-            ],
-          ),
-        ),
+                    HomeTitles(title: "Categories"),
+                    CategoriesList(),
+                    HomeTitles(title: "Products"),
+                    Products(HomeCubit.of(context).products)
+                  ],
+                ),
+              ),
       ),
     );
   }

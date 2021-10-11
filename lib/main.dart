@@ -7,6 +7,7 @@ import 'package:storezone/translations/codegen_loader.g.dart';
 import 'package:storezone/views/cart/cart_cubit.dart';
 import 'package:storezone/views/category/cubit.dart';
 import 'package:storezone/views/confirm_address/confirm_address_cubit.dart';
+import 'package:storezone/views/favorite/cubit.dart';
 import 'package:storezone/views/home/cubit.dart';
 
 Future <void> main() async {
@@ -52,6 +53,11 @@ class MyApp extends StatelessWidget {
       BlocProvider<CartCubit>(
         create: (BuildContext context) => CartCubit(),
       ),
+      BlocProvider<FavoritesCubit>(
+        create: (BuildContext context) => FavoritesCubit(),
+      ),
+
+
     ],
       child: MaterialApp(
         localizationsDelegates: context.localizationDelegates,

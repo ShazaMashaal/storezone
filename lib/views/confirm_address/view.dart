@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:storezone/consts/colors.dart';
+import 'package:storezone/consts/strings.dart';
 import 'package:storezone/widgets/custom_button.dart';
 import 'components/addresses_list.dart';
 import 'confirm_address_cubit.dart';
@@ -30,7 +31,9 @@ class ConfirmAddressView extends StatelessWidget {
                         itemCount: ConfirmAddressCubit.of(context).addresses.length,
                         itemBuilder: (context, index) => AddressCard(ConfirmAddressCubit.of(context).addresses[index])),
 
-                    Center(child: Container(width: MediaQuery.of(context).size.width/2, child: CustomButton(textColor: Colors.white,text: "Add new address",color:  appOrangeColor,)))
+                    Center(child: Container(width: MediaQuery.of(context).size.width/2, child: CustomButton(textColor: Colors.white,text: "Add new address",color:  appOrangeColor,function: (){
+                      Navigator.pushNamed(context, cartScreen);
+                    },)))
                   ],
                 ),
               ),
@@ -40,26 +43,6 @@ class ConfirmAddressView extends StatelessWidget {
     ;
 
 
-    //   BlocProvider(
-    //   create: (context) => ConfirmAddressCubit()..getAddresses(context),
-    //   child: Scaffold(
-    //     appBar: AppBar(
-    //       flexibleSpace: AppBarColor(),
-    //     ),
-    //     body: Center(
-    //       child: ListView(
-    //         padding: EdgeInsets.only(right: 30, left: 30, top: 50, bottom: 50),
-    //         children: [
-    //           Text("Select a shipping address",style: TextStyle(fontSize: 25),),
-    //           Padding(
-    //             padding: const EdgeInsets.only(top: 40),
-    //             child: AddressesList(),
-    //           )
-    //         ],
-    //       ),
-    //     ),
-    //   ),
-    // )
 
 
   }

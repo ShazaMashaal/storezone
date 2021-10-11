@@ -1,13 +1,12 @@
 import 'dart:convert';
 import 'dart:io';
-
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:storezone/consts/strings.dart';
 import 'package:storezone/core/storage.dart';
 import 'package:storezone/models/user.dart';
+import 'package:storezone/shared/dio_put.dart';
 import 'package:storezone/views/edit_profile/states.dart';
 
 
@@ -44,14 +43,7 @@ class EditProfileCubit extends Cubit<EditProfileStates> {
     };
 
     try {
-      final response = await Dio().put(baseUrl + 'update-profile',
-          data: formData,
-          options: Options(
-              headers: {'Authorization': AppStorage.getToken},
-              followRedirects: false,
-              validateStatus: (status) {
-                return status < 500;
-              }));
+      final response = await dioPut(formData,'update-profile');
       user=UserModel.fromJson(response.data);
 
       await AppStorage.cashUserInfo(user);

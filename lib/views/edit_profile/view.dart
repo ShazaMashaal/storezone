@@ -5,25 +5,24 @@ import 'package:storezone/views/edit_profile/states.dart';
 import 'components/bottom_container.dart';
 import 'components/top_container.dart';
 
-
 class EditProfileView extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context)=> EditProfileCubit(),
+      create: (context) => EditProfileCubit(),
       child: Scaffold(
-        body: BlocBuilder<EditProfileCubit,EditProfileStates>(
-          builder:(context, state) => state is EditProfileLoading?Center(child: CircularProgressIndicator()): Column(
-            children: [
-              TopContainer(),
-              Expanded(
-                flex: 4,
-                child: BottomContainer(),
-
-              )
-            ],
-          ),
+        body: BlocBuilder<EditProfileCubit, EditProfileStates>(
+          builder: (context, state) => state is EditProfileLoading
+              ? Center(child: CircularProgressIndicator())
+              : Column(
+                  children: [
+                    TopContainer(),
+                    Expanded(
+                      flex: 4,
+                      child: BottomContainer(),
+                    )
+                  ],
+                ),
         ),
       ),
     );

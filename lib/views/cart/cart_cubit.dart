@@ -6,6 +6,7 @@ import 'package:meta/meta.dart';
 import 'package:storezone/consts/strings.dart';
 import 'package:storezone/core/storage.dart';
 import 'package:storezone/shared/authorized_dio_get.dart';
+import 'package:storezone/shared/dio_put.dart';
 import 'package:storezone/shared/snack_bar.dart';
 import 'package:storezone/views/cart/cart_model.dart';
 
@@ -50,9 +51,7 @@ class CartCubit extends Cubit<CartState> {
   Future<void> changeQuantity(int cartItemId,int quantity)async{
     subTotalUpdated=false;
     emit(CartInit());
-     final response = await Dio().put(baseUrl+'carts/'+cartItemId.toString(),data: {'quantity':quantity},options: Options(
-        headers: {'Authorization' : AppStorage.getToken}
-    ));
+     final response = await dioPut({'quantity':quantity}, 'carts/'+cartItemId.toString());
 
      subTotal = response.data['data']['total'];
      subTotalUpdated=true;
