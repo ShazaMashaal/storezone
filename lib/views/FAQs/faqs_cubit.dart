@@ -3,6 +3,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:meta/meta.dart';
 import 'package:storezone/consts/strings.dart';
+import 'package:storezone/shared/dio_get.dart';
 
 import 'faqs_model.dart';
 
@@ -14,15 +15,9 @@ class FAQsCubit extends Cubit<FAQsState> {
 
   List<ItemData> items = [];
 
-
   Future<void> getQuestionsAndAnswers()async{
     emit(FAQsLoading());
-    final response = await Dio().get(baseUrl+'faqs',options: Options(
-        followRedirects: false,
-        validateStatus: (status) {
-          return status < 500;
-        }
-    ));
+    final response = await dioGet('faqs');
     final data = response.data as Map;
     FAQsModel faqsModel = FAQsModel.fromJson(data);
     items.clear();

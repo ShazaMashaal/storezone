@@ -9,7 +9,6 @@ import '../cart_model.dart';
 
 class CartItem extends StatefulWidget {
   final CartItems cartItem;
-
   const CartItem(this.cartItem);
 
   @override

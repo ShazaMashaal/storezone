@@ -1,10 +1,7 @@
 
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:storezone/models/banner.dart';
 import 'package:storezone/views/home/cubit.dart';
-import 'package:storezone/views/home/states.dart';
 
 class HomeBanner extends StatelessWidget {
 

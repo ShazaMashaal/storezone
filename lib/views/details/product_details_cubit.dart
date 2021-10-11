@@ -5,6 +5,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:meta/meta.dart';
 import 'package:storezone/consts/strings.dart';
 import 'package:storezone/core/storage.dart';
+import 'package:storezone/shared/authorized_dio_get.dart';
+import 'package:storezone/shared/dio_post.dart';
 import 'package:storezone/shared/snack_bar.dart';
 import 'package:storezone/views/details/product_details_model.dart';
 
@@ -21,11 +23,7 @@ class ProductDetailsCubit extends Cubit<ProductDetailsState> {
 
   Future<void> getProductDetails() async{
     emit(ProductDetailsLoading());
-    final response = await Dio().get(baseUrl+'products/'+id.toString(),options:
-    Options(
-      headers: {'Authorization' :AppStorage.getToken},
-      contentType: 'application/json',
-    ));
+    final response = await authorisedDioGet('products/'+id.toString());
     final data = response.data as Map;
     productDetails = ProductDetailsModel.fromJson(data);
     print(productDetails.data);
@@ -33,15 +31,7 @@ class ProductDetailsCubit extends Cubit<ProductDetailsState> {
   }
   Future<void> addAndDeleteCartItems(context,int productId)async{
     emit(ProductDetailsLoading());
-    final response = await Dio().post(baseUrl+'carts',data: {"product_id":productId},options: Options(
-        followRedirects: false,
-        validateStatus: (status) {
-          return status < 500;
-        },
-        contentType: 'application/json',
-        headers: {
-          'Authorization':AppStorage.getToken}
-    ));
+    final response = await dioPost({"product_id":productId}, 'carts');
     final data = response.data;
     print(productId);
     //TODO: delay in displaying and hiding

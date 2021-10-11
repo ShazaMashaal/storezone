@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:storezone/consts/strings.dart';
+import 'package:storezone/shared/dio_post.dart';
 import 'package:storezone/views/forgot_password/states.dart';
 
 class ForgotPasswordCubit extends Cubit<ForgotPasswordStates> {
@@ -21,13 +22,7 @@ class ForgotPasswordCubit extends Cubit<ForgotPasswordStates> {
       'email': emailController.text,
     };
     try {
-      final response = await Dio().post(baseUrl + "verify-email",
-          data: formData,
-          options: Options(
-              followRedirects: false,
-              validateStatus: (status) {
-                return status < 500;
-              }));
+      final response = await dioPost(formData,"verify-email");
 
       final data = response.data as Map;
 

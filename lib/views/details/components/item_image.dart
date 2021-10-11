@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:storezone/shared/fade_image_handle_error.dart';
 import 'package:storezone/views/favorite/components/favorite_circle_icon.dart';
 
 import '../product_details_cubit.dart';
@@ -20,12 +21,7 @@ class ItemImage extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             autoPlay: false,
           ),
-          items: productDetails.images.map((e) => Container(child: Center(child: FadeInImage(
-              placeholder: AssetImage("assets/images/placeholder.gif"),
-              imageErrorBuilder:    (BuildContext context, Object exception, StackTrace stackTrace) {
-                return  Image.asset("assets/images/placeholder.gif");
-              },
-              image: NetworkImage(e)),),)).toList(),
+          items: productDetails.images.map((e) => Container(child: Center(child: FadeImageHandleError(e),),)).toList(),
         ),
         productDetails.discount==0?Text(""):Positioned(
             left: 10,

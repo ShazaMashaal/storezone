@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:storezone/consts/strings.dart';
+import 'package:storezone/shared/dio_post.dart';
 import 'package:storezone/shared/snack_bar.dart';
 import 'package:storezone/views/register/states.dart';
 import 'package:storezone/views/reset_password/states.dart';
@@ -29,13 +30,7 @@ class ResetPasswordCubit extends Cubit<ResetPasswordStates> {
       'password': passwordController.text,
     };
     try {
-      final response = await Dio().post(baseUrl + "reset-password",
-          data: formData,
-          options: Options(
-              followRedirects: false,
-              validateStatus: (status) {
-                return status < 500;
-              }));
+      final response = await dioPost(formData,"reset-password");
       final data = response.data as Map;
       if (!data['status']) {
         showSnack(context,data['message'] );

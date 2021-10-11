@@ -6,14 +6,15 @@ import 'circle_button.dart';
 class Quantity extends StatefulWidget {
   final int quantity;
   final int cartItemId;
+   Quantity(this.cartItemId, this.quantity);
 
-  const Quantity(this.cartItemId, this.quantity);
 
   @override
   _QuantityState createState() => _QuantityState();
 }
 
 class _QuantityState extends State<Quantity> {
+
   int quantity=1;
 
   @override
@@ -43,7 +44,9 @@ class _QuantityState extends State<Quantity> {
             else
               quantity --;
             CartCubit.of(context).changeQuantity(widget.cartItemId, quantity);
-          });
+          }
+          );
+
         }),
         Text(quantity.toString()),
         CircleButton(

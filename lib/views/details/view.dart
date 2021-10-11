@@ -13,6 +13,7 @@ import 'components/purchase.dart';
 class DetailsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+
     final arguments = ModalRoute.of(context).settings.arguments as Map;
     final id = arguments['id'];
     print(id);
@@ -61,17 +62,18 @@ class DetailsView extends StatelessWidget {
                                 .data
                                 .id),
                         //TODO : separate description and display each feature in a single line
-                        Text(
-                          ProductDetailsCubit.of(context)
-                              .productDetails
-                              .data.description,
-                          style: TextStyle(fontWeight: FontWeight.bold),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Card(
+                            child: Text(
+                              ProductDetailsCubit.of(context)
+                                  .productDetails
+                                  .data.description,
+                              style: TextStyle(fontWeight: FontWeight.bold,fontSize: 23),
+                            ),
+                          ),
                         ),
-                        ListView.builder(
-                            shrinkWrap: true,
-                            itemCount: 10,
-                            itemBuilder: (context, index) =>
-                                Text("dfdfdgsdfgd"))
+
                       ],
                     ),
                   ),

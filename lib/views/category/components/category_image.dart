@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:storezone/shared/fade_image_handle_error.dart';
 import 'package:storezone/views/category/components/states.dart';
 
 import '../cubit.dart';
@@ -16,13 +17,7 @@ CategoryImage(this.image);
             maxWidth: MediaQuery.of(context).size.width * 0.3,
             maxHeight: MediaQuery.of(context).size.width * 0.3,
           ),
-          child: FadeInImage(
-            placeholder: AssetImage("assets/images/placeholder.gif"),
-            imageErrorBuilder:    (BuildContext context, Object exception, StackTrace stackTrace) {
-            return  Image.asset("assets/images/placeholder.gif");
-          },
-            image: NetworkImage(image),
-          ),
+          child: FadeImageHandleError(image),
           //TODO: connectivity check internet ..... and refresh screen
 
         ),

@@ -5,7 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:storezone/consts/strings.dart';
 import 'package:storezone/core/storage.dart';
-import 'package:storezone/models/home.dart';
+import 'package:storezone/shared/dio_post.dart';
+import 'package:storezone/views/home/home_model.dart';
 import 'package:storezone/views/change_password/states.dart';
 import 'package:storezone/views/home/states.dart';
 
@@ -30,13 +31,7 @@ class ChangePasswordCubit extends Cubit<ChangePasswordStates> {
     final formData =
     {'current_password': passwordController.text, 'new_password': newPasswordController.text};
     try{
-    final response = await Dio().post(baseUrl+'change-password',data: formData,options: Options(
-      headers: {'Authorization':AppStorage.getToken},
-        followRedirects: false,
-        validateStatus: (status) {
-          return status < 500;
-        }
-    ));
+    final response = await dioPost(formData, 'change-password');
     final data = response.data as Map;
     if (!data['status']) {
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(

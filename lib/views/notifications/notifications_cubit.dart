@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:meta/meta.dart';
 import 'package:storezone/consts/strings.dart';
 import 'package:storezone/core/storage.dart';
+import 'package:storezone/shared/authorized_dio_get.dart';
 import 'package:storezone/views/notifications/notifications_model.dart';
 
 part 'notifications_state.dart';
@@ -19,8 +20,7 @@ class NotificationsCubit extends Cubit<NotificationsState> {
   Future<void> getNotification() async {
     emit(NotificationsLoading());
     try {
-      final response = await Dio().get(baseUrl + 'notifications',
-          options: Options(headers: {'Authorization': AppStorage.getToken}));
+      final response = await authorisedDioGet('notifications');
       final data = response.data as Map;
       NotificationsModel notificationsModel = NotificationsModel.fromJson(data);
       notification.addAll(notificationsModel.data.data);

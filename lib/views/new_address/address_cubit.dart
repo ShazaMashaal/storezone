@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:meta/meta.dart';
 import 'package:storezone/consts/strings.dart';
 import 'package:storezone/core/storage.dart';
+import 'package:storezone/shared/dio_post.dart';
 import 'package:storezone/shared/snack_bar.dart';
 import 'package:storezone/views/new_address/addresses_model.dart';
 
@@ -38,14 +39,7 @@ class AddressCubit extends Cubit<AddressState> {
       'notes': addressNotes.text
     };
     try {
-      final response = await Dio().post(baseUrl + "addresses",
-          data: formData,
-          options: Options(
-            headers: {'Authorization':AppStorage.getToken},
-              followRedirects: false,
-              validateStatus: (status) {
-                return status < 500;
-              }));
+      final response = await dioPost(formData, "addresses");
       final data = response.data as Map;
       AddressesModel addressesModel = AddressesModel.fromJson(data);
       if (!addressesModel.status) {

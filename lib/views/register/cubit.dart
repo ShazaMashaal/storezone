@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:storezone/consts/strings.dart';
 import 'package:storezone/core/storage.dart';
 import 'package:storezone/models/user.dart';
+import 'package:storezone/shared/dio_post.dart';
 import 'package:storezone/shared/snack_bar.dart';
 import 'package:storezone/views/register/states.dart';
 
@@ -33,13 +34,7 @@ class RegisterCubit extends Cubit<RegisterStates> {
       'phone': phoneNumberController.text
     };
     try {
-      final response = await Dio().post(baseUrl + "register",
-          data: formData,
-          options: Options(
-              followRedirects: false,
-              validateStatus: (status) {
-                return status < 500;
-              }));
+      final response = await dioPost(formData,"register");
       final data = response.data ;
       user=UserModel.fromJson(data);
       if (!user.status) {
