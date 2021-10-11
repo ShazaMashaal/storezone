@@ -6,8 +6,6 @@ import 'package:storezone/views/cart/view.dart';
 import 'package:storezone/views/category/view.dart';
 import 'package:storezone/views/home/view.dart';
 import 'package:storezone/components/app_bar.dart';
-import 'package:storezone/views/home/view.dart';
-import 'package:storezone/views/home/view.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:storezone/views/settings/view.dart';
 import 'components/custom_drawer.dart';

@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:storezone/views/edit_profile/components/edit_profile_text_field.dart';
 import 'package:storezone/views/edit_profile/cubit.dart';
 import 'package:storezone/views/edit_profile/states.dart';
-
 import 'components/bottom_container.dart';
 import 'components/top_container.dart';
+
 
 class EditProfileView extends StatelessWidget {
 

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:storezone/views/category_products/category_products_model.dart';
 
 class ProductNameAndPrice extends StatelessWidget {
   final  product;

@@ -1,9 +1,6 @@
 import 'package:bloc/bloc.dart';
-import 'package:dio/dio.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:meta/meta.dart';
-import 'package:storezone/consts/strings.dart';
-import 'package:storezone/core/storage.dart';
 import 'package:storezone/shared/dio_post.dart';
 import 'package:storezone/views/search/search_model.dart';
 

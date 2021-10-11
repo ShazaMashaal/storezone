@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:storezone/translations/locale_keys.g.dart';
-import 'package:storezone/views/login/cubit.dart';
 import 'package:storezone/widgets/custom_text_field.dart';
 import 'package:easy_localization/easy_localization.dart';
 class PasswordTextField extends StatelessWidget {

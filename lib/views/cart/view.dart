@@ -1,10 +1,8 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:storezone/consts/strings.dart';
 import 'package:storezone/views/cart/cart_cubit.dart';
-import 'package:storezone/views/cart/components/quantity.dart';
 import 'package:storezone/views/confirm_address/confirm_address_cubit.dart';
 import 'package:storezone/widgets/custom_button.dart';
 import 'components/cart_item.dart';

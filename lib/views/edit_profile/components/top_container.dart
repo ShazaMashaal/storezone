@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:storezone/core/storage.dart';
 import 'package:storezone/translations/locale_keys.g.dart';
 import 'package:storezone/views/edit_profile/components/profile_cover.dart';
 import 'package:storezone/views/edit_profile/components/profile_image.dart';

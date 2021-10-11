@@ -1,12 +1,9 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:shimmer/shimmer.dart';
 import 'package:storezone/consts/strings.dart';
 import 'package:storezone/views/category/components/category_image.dart';
 import 'package:storezone/views/category/components/states.dart';
 import 'package:storezone/views/category/cubit.dart';
-
 import 'components/category_name.dart';
 import 'components/grey_back_arrow.dart';
 

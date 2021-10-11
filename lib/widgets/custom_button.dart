@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:storezone/consts/dim.dart';
-import 'package:storezone/consts/strings.dart';
 
 class CustomButton extends StatelessWidget {
   final Function function;

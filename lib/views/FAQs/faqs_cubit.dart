@@ -1,8 +1,6 @@
 import 'package:bloc/bloc.dart';
-import 'package:dio/dio.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:meta/meta.dart';
-import 'package:storezone/consts/strings.dart';
 import 'package:storezone/shared/dio_get.dart';
 
 import 'faqs_model.dart';

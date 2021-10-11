@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:storezone/shared/fade_image_handle_error.dart';
-import 'package:storezone/views/category/components/states.dart';
 
-import '../cubit.dart';
 
 class CategoryImage extends StatelessWidget {
 final String image;

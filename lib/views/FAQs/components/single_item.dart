@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../faqs_cubit.dart';
-
 class SingleItem extends StatelessWidget {
   final String question;
 

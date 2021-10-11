@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:storezone/consts/colors.dart';
-import 'package:storezone/consts/strings.dart';
 import 'package:storezone/translations/locale_keys.g.dart';
 import 'package:storezone/views/login/components/email_text_field.dart';
 import 'package:storezone/views/login/components/password.text_field.dart';

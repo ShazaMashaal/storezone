@@ -1,10 +1,8 @@
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:storezone/consts/strings.dart';
 import 'package:storezone/shared/dio_post.dart';
 import 'package:storezone/shared/snack_bar.dart';
-import 'package:storezone/views/login/states.dart';
 import 'package:storezone/views/pin_code/states.dart';
 
 

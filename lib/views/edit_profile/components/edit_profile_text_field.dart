@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../cubit.dart';
 
 class EditProfileTextField extends StatelessWidget {
   final BoxConstraints constraints;

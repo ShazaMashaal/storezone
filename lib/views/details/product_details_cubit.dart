@@ -1,10 +1,7 @@
 import 'package:bloc/bloc.dart';
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:meta/meta.dart';
-import 'package:storezone/consts/strings.dart';
-import 'package:storezone/core/storage.dart';
 import 'package:storezone/shared/authorized_dio_get.dart';
 import 'package:storezone/shared/dio_post.dart';
 import 'package:storezone/shared/snack_bar.dart';

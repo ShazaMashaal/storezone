@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:storezone/consts/strings.dart';
 import 'package:storezone/views/category/components/category_image.dart';
-import 'package:storezone/views/category/cubit.dart';
 import 'package:storezone/views/favorite/states.dart';
 import 'package:storezone/views/favorite/cubit.dart';
 import 'components/favorite_item_name.dart';

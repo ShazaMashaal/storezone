@@ -40,9 +40,7 @@ class AppStorage {
   //   await _cacheUserModel(userModel);
   // }
 
-  static Future<void> _cacheUserModel(UserModel userModel)async => await _box.write('userModel', userModel.toJson());
 
-  static Future<void> _cacheUserId(int id)async=> await _box.write('userId', id);
 
 
   static int get getUserId =>

@@ -1,8 +1,5 @@
 import 'dart:async';
-
-import 'package:dio/dio.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:storezone/consts/strings.dart';
 import 'package:storezone/shared/dio_get.dart';
 import 'package:storezone/views/category/categories_model.dart';
 

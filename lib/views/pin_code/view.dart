@@ -1,17 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:pin_code_text_field/pin_code_text_field.dart';
-import 'package:storezone/consts/strings.dart';
 import 'package:storezone/translations/locale_keys.g.dart';
 import 'package:storezone/views/forgot_password/components/custom_appbar.dart';
 import 'package:easy_localization/easy_localization.dart';
-import 'package:storezone/widgets/custom_button.dart';
-import 'components/pin_code.dart';
 import 'components/pin_code_form.dart';
-import 'components/rich_span.dart';
-import 'components/title.dart';
-import 'components/verify_pin_code_button.dart';
 import 'cubit.dart';
 
 class PinCodeView extends StatelessWidget {

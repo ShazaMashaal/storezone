@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get_storage/get_storage.dart';
 import 'package:storezone/consts/strings.dart';
 import 'package:storezone/core/storage.dart';
 import 'package:storezone/views/splash/widgets/splash_content.dart';

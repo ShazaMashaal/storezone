@@ -4,7 +4,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:storezone/consts/strings.dart';
 import 'package:storezone/views/category/cubit.dart';
 
-import '../cubit.dart';
 
 class CategoriesList extends StatelessWidget {
 

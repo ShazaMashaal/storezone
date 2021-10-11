@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:storezone/consts/colors.dart';
-import 'package:storezone/views/bottom_navigation_bar/components/app_bar_color.dart';
 import 'package:storezone/widgets/custom_button.dart';
-
 import 'components/addresses_list.dart';
 import 'confirm_address_cubit.dart';
 
