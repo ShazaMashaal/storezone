@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:storezone/consts/colors.dart';
 import 'package:storezone/translations/locale_keys.g.dart';
 import 'package:storezone/views/edit_profile/cubit.dart';
 import 'package:storezone/views/edit_profile/states.dart';
@@ -36,7 +37,7 @@ class BottomContainer extends StatelessWidget {
                   bloc: controller,
                   builder:(context,state)=>state is EditProfileLoading? CircularProgressIndicator(): CustomButton(
                     function: ()=>controller.update(),
-                    color: Color(0xFFFD9A25),
+                    color: appOrangeColor,
                     textColor: Colors.white,
                     text: LocaleKeys.editProfile_update.tr(),
                   ),

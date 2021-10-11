@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:storezone/consts/colors.dart';
 import 'package:storezone/translations/locale_keys.g.dart';
 import 'package:storezone/views/cart/view.dart';
 import 'package:storezone/views/category/view.dart';
@@ -33,7 +34,7 @@ class _HomeState extends State<Home> {
     return Scaffold(
       drawer: CustomDrawer(),
       bottomNavigationBar: BottomNavigationBar(
-        selectedItemColor: Color(0xFFFD9A25),
+        selectedItemColor: appOrangeColor,
         type: BottomNavigationBarType.fixed,
         currentIndex: currentIndex,
         onTap: (value) {

@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:meta/meta.dart';
 import 'package:storezone/consts/strings.dart';
 import 'package:storezone/core/storage.dart';
+import 'package:storezone/shared/snack_bar.dart';
 import 'package:storezone/views/new_address/addresses_model.dart';
 
 part 'confirm_address_state.dart';
@@ -54,14 +55,8 @@ class ConfirmAddressCubit extends Cubit<ConfirmAddressState> {
                 return status < 500;
               }));
       final data = response.data as Map;
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-          backgroundColor:  Colors.grey.withOpacity(.4),
+      showSnack(context,data['message'] );
 
-          behavior: SnackBarBehavior.floating,
-          content: Text(
-            data['message'],
-            style: TextStyle(fontSize: 20),
-          )));
     } catch (e, s) {
       print(s);
       print(e);

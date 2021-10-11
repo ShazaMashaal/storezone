@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:storezone/consts/colors.dart';
 import 'package:storezone/consts/strings.dart';
 
 class CustomDrawer extends StatelessWidget {
@@ -19,7 +20,7 @@ class CustomDrawer extends StatelessWidget {
               gradient: LinearGradient(
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
-                  colors: <Color>[Color(0xFFFD9A25), Color(0xFFFFC981)])),
+                  colors: <Color>[appOrangeColor, Color(0xFFFFC981)])),
           accountName: Text(GetStorage().read('name')),
           accountEmail: Text(GetStorage().read('email')),
           currentAccountPicture: ClipRRect(

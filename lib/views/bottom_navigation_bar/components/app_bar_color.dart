@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:storezone/consts/colors.dart';
 
 class AppBarColor extends StatelessWidget {
 
@@ -11,7 +12,7 @@ class AppBarColor extends StatelessWidget {
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
             colors: <Color>[
-              Color(0xFFFD9A25),
+              appOrangeColor,
               Color(0xFFFFC981)
             ]),
 

@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:storezone/consts/colors.dart';
 import 'package:storezone/consts/strings.dart';
 import 'package:storezone/widgets/custom_button.dart';
 
@@ -26,7 +27,7 @@ class SignCard extends StatelessWidget {
 
                 child: Column(
               children: [
-                CustomButton(color:Color(0xFFFD9A25),text: "Sign In",height: 30,
+                CustomButton(color:appOrangeColor,text: "Sign In",height: 30,
                     textColor: Colors.white,
                     function: () => Navigator.pushNamed(context, loginScreen)),
                 Container(

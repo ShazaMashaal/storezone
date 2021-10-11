@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:storezone/consts/colors.dart';
 
 class NewPrice extends StatelessWidget {
 final double price;
@@ -14,7 +15,7 @@ final double price;
         Text(
           "EGP: "+price.toString(),
           style: TextStyle(
-              fontSize: 18,color: Color(0xFFFD9A25)
+              fontSize: 18,color: appOrangeColor
           ),
         ),
       ],

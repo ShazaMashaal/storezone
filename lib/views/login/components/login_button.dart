@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:storezone/consts/colors.dart';
 import 'package:storezone/translations/locale_keys.g.dart';
 import 'package:storezone/views/login/states.dart';
 import 'package:storezone/widgets/custom_button.dart';
@@ -14,7 +15,7 @@ class LoginButton extends StatelessWidget {
     return BlocBuilder(
       bloc: controller,
       builder: (context, state) =>state is LoginLoading?CircularProgressIndicator(): CustomButton(
-          color: Color(0xFFFD9A25),text: LocaleKeys.login_login.tr(),
+          color: appOrangeColor,text: LocaleKeys.login_login.tr(),
           function: () => controller.login(context),
           textColor: Color(0xFFFFF6E9)),
     );

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:storezone/consts/colors.dart';
 import 'package:storezone/views/favorite/cubit.dart';
 
 class CircleFavoriteIcon extends StatefulWidget {
@@ -30,7 +31,7 @@ class _CircleFavoriteIconState extends State<CircleFavoriteIcon> {
           FavoritesCubit().isFavorite(context, widget.id);
         });
       },
-      color: isFavorite ? Color(0xFFFD9A25) : Colors.white70,
+      color: isFavorite ? appOrangeColor : Colors.white70,
       child: Icon(
         Icons.favorite_border,
         size: 30,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:storezone/consts/colors.dart';
 import 'package:storezone/translations/locale_keys.g.dart';
 import 'package:storezone/views/forgot_password/components/reset_button.dart';
 import 'package:storezone/views/login/components/email_text_field.dart';
@@ -46,7 +47,7 @@ class ResetPasswordForm extends StatelessWidget {
               BlocBuilder(
                   bloc: controller,
                   builder:(context,state)=> state is ResetPasswordLoading? CircularProgressIndicator(): CustomButton(
-                  color: Color(0xFFFD9A25),
+                  color: appOrangeColor,
                   text: "Save",
                   textColor: Colors.white,
                   function: ()=>controller.resetPassword(context),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:storezone/consts/colors.dart';
 import 'package:storezone/views/new_address/addresses_model.dart';
 import 'package:storezone/widgets/custom_button.dart';
 
@@ -25,7 +26,7 @@ final AddressData address;
             Center(
               child: Container(
                 width: MediaQuery.of(context).size.width/2,
-                child: CustomButton(text: "Deliver to this address",textColor: Colors.white,color: Color(0xFFFD9A25),height: 25,
+                child: CustomButton(text: "Deliver to this address",textColor: Colors.white,color: appOrangeColor,height: 25,
 
                 ),
               ),
@@ -36,7 +37,9 @@ final AddressData address;
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   //TODO: How to reuse the same add address form in edit with out get null exception
-                  OutlinedButton(onPressed: (){}, child: Text("Edit",style: TextStyle(color: Colors.black),)),
+                  OutlinedButton(onPressed: (){
+                    
+                  }, child: Text("Edit",style: TextStyle(color: Colors.black),)),
                   OutlinedButton(onPressed: (){
 
                     controller.deleteAddress(context, address.id);

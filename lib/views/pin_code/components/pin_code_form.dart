@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:storezone/consts/colors.dart';
 import 'package:storezone/translations/locale_keys.g.dart';
 import 'package:storezone/views/pin_code/components/pin_code.dart';
 import 'package:storezone/views/pin_code/components/rich_span.dart';
@@ -23,7 +24,7 @@ class PinCodeForm extends StatelessWidget {
                 PinCode(),
                 SizedBox(height: MediaQuery.of(context).size.height/20,),
 
-                RichSpan(text: LocaleKeys.pinCode_didntRecieveCode.tr()+" ",boldText:LocaleKeys.pinCode_resend.tr(),boldColor: Color(0xFFFD9A25),),
+                RichSpan(text: LocaleKeys.pinCode_didntRecieveCode.tr()+" ",boldText:LocaleKeys.pinCode_resend.tr(),boldColor: appOrangeColor,),
                 VerifyPinCodeButton(),
               ],
             ),

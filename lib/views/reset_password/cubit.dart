@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:storezone/consts/strings.dart';
+import 'package:storezone/shared/snack_bar.dart';
 import 'package:storezone/views/register/states.dart';
 import 'package:storezone/views/reset_password/states.dart';
 
@@ -37,13 +38,7 @@ class ResetPasswordCubit extends Cubit<ResetPasswordStates> {
               }));
       final data = response.data as Map;
       if (!data['status']) {
-        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-            backgroundColor: Colors.red.withOpacity(.4),
-            behavior: SnackBarBehavior.floating,
-            content: Text(
-              data['message'],
-              style: TextStyle(fontSize: 20),
-            )));
+        showSnack(context,data['message'] );
       } else {
         Navigator.pushNamed(context, homeScreen);
       }

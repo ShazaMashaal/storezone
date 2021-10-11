@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:storezone/consts/colors.dart';
 import 'package:storezone/views/new_address/address_cubit.dart';
 import 'package:storezone/widgets/custom_button.dart';
 import 'package:storezone/widgets/custom_text_field.dart';
@@ -42,7 +43,7 @@ class NewAddressScreenForm extends StatelessWidget {
             bloc: controller,
 
             builder:(context,state)=>state is AddressLoading?CircularProgressIndicator(): CustomButton(
-                color: Color(0xFFFD9A25),
+                color: appOrangeColor,
                 text: "Add address",
                 height: 16,
                 textColor: Colors.white,

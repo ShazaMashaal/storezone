@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:meta/meta.dart';
 import 'package:storezone/consts/strings.dart';
 import 'package:storezone/core/storage.dart';
+import 'package:storezone/shared/snack_bar.dart';
 import 'package:storezone/views/cart/cart_model.dart';
 
 part 'cart_state.dart';
@@ -40,13 +41,7 @@ class CartCubit extends Cubit<CartState> {
     ));
 
     final data = response.data as Map;
-    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-        backgroundColor: Colors.red.withOpacity(.4),
-        behavior: SnackBarBehavior.floating,
-        content: Text(
-          data['message'],
-          style: TextStyle(fontSize: 20),
-        )));
+    showSnack(context, data['message']);
 
   }
 

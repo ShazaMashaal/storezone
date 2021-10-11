@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:storezone/consts/colors.dart';
 import 'package:storezone/consts/strings.dart';
 import 'package:storezone/translations/locale_keys.g.dart';
 import 'package:storezone/views/login/components/email_text_field.dart';
@@ -43,7 +44,7 @@ class RegisterForm extends StatelessWidget {
             bloc: controller,
 
             builder:(context,state)=>state is RegisterLoading?CircularProgressIndicator(): CustomButton(
-                color: Color(0xFFFD9A25),
+                color: appOrangeColor,
                 text: LocaleKeys.login_register.tr(),
                 height: 16,
                 textColor: Colors.white,
@@ -67,7 +68,7 @@ class RegisterForm extends StatelessWidget {
               text: LocaleKeys.login_login.tr(),
               height: 16,
               function: () => Navigator.pop(context),
-              textColor: Color(0xFFFD9A25)),
+              textColor: appOrangeColor),
         ],
       ),
     );
