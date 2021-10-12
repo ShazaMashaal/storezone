@@ -12,7 +12,7 @@ class AppBarColor extends StatelessWidget {
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
             colors: <Color>[
-              appOrangeColor,
+              appCyanColor,
               Color(0xFFFFC981)
             ]),
 

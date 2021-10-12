@@ -31,7 +31,7 @@ class ConfirmAddressView extends StatelessWidget {
                         itemCount: ConfirmAddressCubit.of(context).addresses.length,
                         itemBuilder: (context, index) => AddressCard(ConfirmAddressCubit.of(context).addresses[index])),
 
-                    Center(child: Container(width: MediaQuery.of(context).size.width/2, child: CustomButton(textColor: Colors.white,text: "Add new address",color:  appOrangeColor,function: (){
+                    Center(child: Container(width: MediaQuery.of(context).size.width/2, child: CustomButton(textColor: Colors.white,text: "Add new address",color:  appCyanColor,function: (){
                       Navigator.pushNamed(context, cartScreen);
                     },)))
                   ],

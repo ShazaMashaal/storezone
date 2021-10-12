@@ -4,14 +4,18 @@ import 'package:storezone/views/bottom_navigation_bar/view.dart';
 import 'package:storezone/views/cart/view.dart';
 import 'package:storezone/views/category_products/view.dart';
 import 'package:storezone/views/change_password/view.dart';
+import 'package:storezone/views/choose_payment_method/view.dart';
+import 'package:storezone/views/complaints/view.dart';
 import 'package:storezone/views/confirm_address/view.dart';
-import 'package:storezone/views/details/view.dart';
+import 'package:storezone/views/product_details/view.dart';
 import 'package:storezone/views/edit_profile/components/full_screen_image.dart';
 import 'package:storezone/views/edit_profile/view.dart';
 import 'package:storezone/views/forgot_password/view.dart';
 import 'package:storezone/views/login/view.dart';
 import 'package:storezone/views/new_address/view.dart';
 import 'package:storezone/views/notifications/view.dart';
+import 'package:storezone/views/order/view.dart';
+import 'package:storezone/views/order_details/view.dart';
 import 'package:storezone/views/pin_code/view.dart';
 import 'package:storezone/views/register/view.dart';
 import 'package:storezone/views/reset_password/view.dart';
@@ -61,7 +65,14 @@ class AppRouter{
         return MaterialPageRoute(builder: (_)=>NewAddressView());
       case confirmAddressScreen:
         return MaterialPageRoute(builder: (_)=>ConfirmAddressView());
-
+      case choosePaymentMethodScreen :
+        return MaterialPageRoute(builder: (_)=>ChoosePaymentMethodView(),settings: settings);
+      case ordersScreen :
+        return MaterialPageRoute(builder: (_)=>OrdersView());
+      case orderDetailsScreen :
+        return MaterialPageRoute(builder: (_)=>OrderDetailsView(),settings: settings);
+      case complaintsScreen :
+        return MaterialPageRoute(builder: (_)=>ComplaintsView());
 
     }
   }

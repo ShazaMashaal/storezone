@@ -24,7 +24,7 @@ class PinCodeForm extends StatelessWidget {
                 PinCode(),
                 SizedBox(height: MediaQuery.of(context).size.height/20,),
 
-                RichSpan(text: LocaleKeys.pinCode_didntRecieveCode.tr()+" ",boldText:LocaleKeys.pinCode_resend.tr(),boldColor: appOrangeColor,),
+                RichSpan(text: LocaleKeys.pinCode_didntRecieveCode.tr()+" ",boldText:LocaleKeys.pinCode_resend.tr(),boldColor: appCyanColor,),
                 VerifyPinCodeButton(),
               ],
             ),

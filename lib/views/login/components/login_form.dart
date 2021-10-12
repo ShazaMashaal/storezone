@@ -36,7 +36,7 @@ class LoginForm extends StatelessWidget {
                   color: Color(0xFFFFF6E9),
                   text: LocaleKeys.login_register.tr(),
                   function: () => Navigator.pushNamed(context, registerScreen),
-                  textColor: appOrangeColor),
+                  textColor: appCyanColor),
             ]));
   }
 }

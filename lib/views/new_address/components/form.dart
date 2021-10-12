@@ -43,7 +43,7 @@ class NewAddressScreenForm extends StatelessWidget {
             bloc: controller,
 
             builder:(context,state)=>state is AddressLoading?CircularProgressIndicator(): CustomButton(
-                color: appOrangeColor,
+                color: appCyanColor,
                 text: "Add address",
                 height: 16,
                 textColor: Colors.white,

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:storezone/views/details/product_details_cubit.dart';
+import 'package:storezone/views/product_details/product_details_cubit.dart';
 import 'package:storezone/widgets/custom_button.dart';
 
 class Purchase extends StatefulWidget {

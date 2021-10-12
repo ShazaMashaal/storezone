@@ -18,6 +18,12 @@ const FAQsScreen='/FAQs';
 const notificationsScreen='/notifications';
 const newAddressScreen='/new_address';
 const confirmAddressScreen='/confirm_address';
+const choosePaymentMethodScreen='/choose_payment';
+const ordersScreen='/orders';
+const orderDetailsScreen='/orders_details';
+const complaintsScreen='/complaints';
+
+
 
 
 

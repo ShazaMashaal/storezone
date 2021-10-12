@@ -17,7 +17,7 @@ class VerifyPinCodeButton extends StatelessWidget {
             ? CircularProgressIndicator()
             : CustomButton(
                 text: LocaleKeys.pinCode_verify.tr(),
-                color: appOrangeColor,
+                color: appCyanColor,
                 textColor: Colors.white,
                 function: () => controller.verifyCode(context),
               ));

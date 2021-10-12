@@ -18,7 +18,7 @@ class ChangePasswordButton extends StatelessWidget {
           ? CircularProgressIndicator(
       )
           : CustomButton(
-          color: appOrangeColor,
+          color: appCyanColor,
           text: LocaleKeys.changePassword_changePassword.tr(),
           textColor: Colors.white,
           // function: () => Navigator.pushNamed(context,pinCodeScreen))

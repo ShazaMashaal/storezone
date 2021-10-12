@@ -66,5 +66,8 @@
   },
   "newAddress": {
     "title": "Add a new address"
+  },
+  "paymentMethod": {
+    "selectPaymentMethod": "Select a payment method"
   }
 }

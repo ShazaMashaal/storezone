@@ -27,7 +27,7 @@ class SignCard extends StatelessWidget {
 
                 child: Column(
               children: [
-                CustomButton(color:appOrangeColor,text: "Sign In",height: 30,
+                CustomButton(color:appCyanColor,text: "Sign In",height: 30,
                     textColor: Colors.white,
                     function: () => Navigator.pushNamed(context, loginScreen)),
                 Container(

@@ -66,5 +66,8 @@
   },
   "newAddress": {
     "title": "أضف عنوان جديد"
+  },
+  "paymentMethod": {
+    "selectPaymentMethod": "اختر طريقة الدفع"
   }
 }

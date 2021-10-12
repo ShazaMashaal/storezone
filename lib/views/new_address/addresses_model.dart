@@ -4,15 +4,17 @@
 
 class AddressesModel {
   AddressesModel({
-      this.status, 
-      this.message, 
-      this.data,});
+    this.status,
+    this.message,
+    this.data,
+  });
 
   AddressesModel.fromJson(dynamic json) {
     status = json['status'];
     message = json['message'];
     data = json['data'] != null ? Data.fromJson(json['data']) : null;
   }
+
   bool status;
   dynamic message;
   Data data;
@@ -26,7 +28,6 @@ class AddressesModel {
     }
     return map;
   }
-
 }
 
 /// current_page : 1
@@ -44,18 +45,19 @@ class AddressesModel {
 
 class Data {
   Data({
-      this.currentPage, 
-      this.data, 
-      this.firstPageUrl, 
-      this.from, 
-      this.lastPage, 
-      this.lastPageUrl, 
-      this.nextPageUrl, 
-      this.path, 
-      this.perPage, 
-      this.prevPageUrl, 
-      this.to, 
-      this.total,});
+    this.currentPage,
+    this.data,
+    this.firstPageUrl,
+    this.from,
+    this.lastPage,
+    this.lastPageUrl,
+    this.nextPageUrl,
+    this.path,
+    this.perPage,
+    this.prevPageUrl,
+    this.to,
+    this.total,
+  });
 
   Data.fromJson(dynamic json) {
     currentPage = json['current_page'];
@@ -76,6 +78,7 @@ class Data {
     to = json['to'];
     total = json['total'];
   }
+
   int currentPage;
   List<AddressData> data;
   String firstPageUrl;
@@ -107,7 +110,6 @@ class Data {
     map['total'] = total;
     return map;
   }
-
 }
 
 /// id : 615
@@ -121,14 +123,15 @@ class Data {
 
 class AddressData {
   AddressData({
-      this.id, 
-      this.name, 
-      this.city, 
-      this.region, 
-      this.details, 
-      this.notes, 
-      this.latitude, 
-      this.longitude,});
+    this.id,
+    this.name,
+    this.city,
+    this.region,
+    this.details,
+    this.notes,
+    this.latitude,
+    this.longitude,
+  });
 
   AddressData.fromJson(dynamic json) {
     id = json['id'];
@@ -137,17 +140,18 @@ class AddressData {
     region = json['region'];
     details = json['details'];
     notes = json['notes'];
-    latitude = json['latitude'];
-    longitude = json['longitude'];
+    latitude = json['latitude'] + 0.0;
+    longitude = json['longitude'] + 0.0;
   }
+
   int id;
   String name;
   String city;
   String region;
   String details;
   String notes;
-  int latitude;
-  int longitude;
+  double latitude;
+  double longitude;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
@@ -161,5 +165,4 @@ class AddressData {
     map['longitude'] = longitude;
     return map;
   }
-
 }

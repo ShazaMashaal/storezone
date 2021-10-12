@@ -15,7 +15,7 @@ class LoginButton extends StatelessWidget {
     return BlocBuilder(
       bloc: controller,
       builder: (context, state) =>state is LoginLoading?CircularProgressIndicator(): CustomButton(
-          color: appOrangeColor,text: LocaleKeys.login_login.tr(),
+          color: appCyanColor,text: LocaleKeys.login_login.tr(),
           function: () => controller.login(context),
           textColor: Color(0xFFFFF6E9)),
     );

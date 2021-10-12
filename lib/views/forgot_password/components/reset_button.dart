@@ -18,7 +18,7 @@ class ResetButton extends StatelessWidget {
           ? CircularProgressIndicator(
       )
           : CustomButton(
-          color: appOrangeColor,
+          color: appCyanColor,
           text: LocaleKeys.forgotPassword_resetPassword.tr(),
           textColor: Colors.white,
           // function: () => Navigator.pushNamed(context,pinCodeScreen))

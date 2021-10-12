@@ -31,7 +31,7 @@ class _CircleFavoriteIconState extends State<CircleFavoriteIcon> {
           FavoritesCubit().isFavorite(context, widget.id);
         });
       },
-      color: isFavorite ? appOrangeColor : Colors.white70,
+      color: isFavorite ? appCyanColor : Colors.white70,
       child: Icon(
         Icons.favorite_border,
         size: 30,

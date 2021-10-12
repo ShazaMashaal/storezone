@@ -43,7 +43,7 @@ class RegisterForm extends StatelessWidget {
             bloc: controller,
 
             builder:(context,state)=>state is RegisterLoading?CircularProgressIndicator(): CustomButton(
-                color: appOrangeColor,
+                color: appCyanColor,
                 text: LocaleKeys.login_register.tr(),
                 height: 16,
                 textColor: Colors.white,
@@ -67,7 +67,7 @@ class RegisterForm extends StatelessWidget {
               text: LocaleKeys.login_login.tr(),
               height: 16,
               function: () => Navigator.pop(context),
-              textColor: appOrangeColor),
+              textColor: appCyanColor),
         ],
       ),
     );

@@ -45,7 +45,7 @@ class ResetPasswordForm extends StatelessWidget {
               BlocBuilder(
                   bloc: controller,
                   builder:(context,state)=> state is ResetPasswordLoading? CircularProgressIndicator(): CustomButton(
-                  color: appOrangeColor,
+                  color: appCyanColor,
                   text: "Save",
                   textColor: Colors.white,
                   function: ()=>controller.resetPassword(context),

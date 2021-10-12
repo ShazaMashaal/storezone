@@ -10,7 +10,7 @@ final double price;
     return Text(
       "EGP: "+price.toString(),
       style: TextStyle(
-          fontSize: 18,color: appOrangeColor
+          fontSize: 18,color: appCyanColor
       ),
     );
   }

@@ -11,7 +11,7 @@ class ChangeImageButton extends StatelessWidget {
         right: 0,
         child: IconButton(
           icon: CircleAvatar(
-              backgroundColor: appOrangeColor,
+              backgroundColor: appCyanColor,
               child: Icon(
                 Icons.camera_alt_outlined,
                 color: Colors.white,

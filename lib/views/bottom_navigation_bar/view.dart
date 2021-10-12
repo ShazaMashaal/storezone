@@ -32,7 +32,7 @@ class _HomeState extends State<Home> {
     return Scaffold(
       drawer: CustomDrawer(),
       bottomNavigationBar: BottomNavigationBar(
-        selectedItemColor: appOrangeColor,
+        selectedItemColor: appCyanColor,
         type: BottomNavigationBarType.fixed,
         currentIndex: currentIndex,
         onTap: (value) {

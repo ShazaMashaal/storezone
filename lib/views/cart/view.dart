@@ -24,8 +24,8 @@ class CartView extends StatelessWidget {
                       child: CartCubit.of(context).cartItems.length==0?Center(child: Text("No Items")): Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
-                       CartCubit.of(context).subTotalUpdated?   Text(
-                            "Subtotal EGP : " +
+                       CartCubit.of(context).subTotalUpdated?Text(
+                            "Subtotal EGP : "+
                                 CartCubit.of(context).subTotal.toString(),
                             style: TextStyle(fontSize: 22),
                           ):CircularProgressIndicator(),

@@ -5,7 +5,7 @@ import 'package:meta/meta.dart';
 import 'package:storezone/shared/authorized_dio_get.dart';
 import 'package:storezone/shared/dio_post.dart';
 import 'package:storezone/shared/snack_bar.dart';
-import 'package:storezone/views/details/product_details_model.dart';
+import 'package:storezone/views/product_details/product_details_model.dart';
 
 part 'product_details_state.dart';
 

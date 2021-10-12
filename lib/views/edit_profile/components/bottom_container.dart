@@ -37,7 +37,7 @@ class BottomContainer extends StatelessWidget {
                   bloc: controller,
                   builder:(context,state)=>state is EditProfileLoading? CircularProgressIndicator(): CustomButton(
                     function: ()=>controller.update(),
-                    color: appOrangeColor,
+                    color: appCyanColor,
                     textColor: Colors.white,
                     text: LocaleKeys.editProfile_update.tr(),
                   ),
